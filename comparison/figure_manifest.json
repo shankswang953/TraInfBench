@@ -1,0 +1,364 @@
+{
+  "source_pdf": "SyncOTML-8.pdf",
+  "source_pdf_sha256": "f689666b03b980240d09b718ab8ab37411b568d35815c4155cb7b267420e8773",
+  "figures": [
+    {
+      "figure": "Fig. 2c; S1b",
+      "dataset": "scmultisim",
+      "description": "Observed and terminal/observed-time lineage distributions, Wasserstein and correct-assignment scores",
+      "scripts": [
+        "comparison/scmultisim/plot_synthetic_truth_method_columns_a4.py",
+        "comparison/scmultisim/plot_synthetic_coati_cytobridge_reversed_tn_comparison.py",
+        "comparison/scmultisim/evaluate_synthetic_predicted_time_sinkhorn.py"
+      ]
+    },
+    {
+      "figure": "Fig. 3; S3a",
+      "dataset": "gastrulation",
+      "description": "Held-out E8.0/E8.5 RNA and mapped-ATAC distributions and six metrics",
+      "scripts": [
+        "comparison/gastrulation/plot_gastrulation_loo_rna_umap_selected_base.py",
+        "comparison/gastrulation/plot_gastrulation_loo_atac_umap_selected_methods.py",
+        "comparison/gastrulation/plot_gastrulation_strict_loo_six_metrics_revised.py"
+      ]
+    },
+    {
+      "figure": "Fig. 4a",
+      "dataset": "gastrulation",
+      "description": "Seven-method caudal-epiblast composition; native-base-conditioned TrajectoryNet, 4x2 layout",
+      "scripts": [
+        "comparison/gastrulation/recompute_gastrulation_trajectorynet_native_base_cohorts.py"
+      ]
+    },
+    {
+      "figure": "Fig. 4b",
+      "dataset": "gastrulation",
+      "description": "NMP retained/incoming/outgoing mass decomposition",
+      "scripts": [
+        "comparison/gastrulation/plot_gastrulation_nmp_mass_decomposition_confirmed.py",
+        "comparison/gastrulation/analyze_gastrulation_full_nmp_mass_decomposition_three_unbalanced.py"
+      ]
+    },
+    {
+      "figure": "Fig. 4c",
+      "dataset": "gastrulation",
+      "description": "WT/T-KO terminal NMP descendants",
+      "scripts": [
+        "comparison/gastrulation/plot_gastrulation_crispr_t_rna_terminal_composition.py"
+      ]
+    },
+    {
+      "figure": "Fig. 4d",
+      "dataset": "gastrulation",
+      "description": "RNA/ATAC lineage transition cosine",
+      "scripts": [
+        "comparison/gastrulation/plot_gastrulation_lineage_transition_cosine_compact.py",
+        "comparison/gastrulation/compare_gastrulation_somitic_core_rna_atac_cosine.py"
+      ]
+    },
+    {
+      "figure": "Fig. 4e",
+      "dataset": "gastrulation",
+      "description": "Selected temporal RNA/ATAC pairs from existing COATI tables",
+      "scripts": [
+        "comparison/gastrulation/plot_gastrulation_coati_objective_rank1_three_pairs.py"
+      ]
+    },
+    {
+      "figure": "Fig. 4f",
+      "dataset": "gastrulation",
+      "description": "S-phase and forward-lineage gene-rank AUROC",
+      "scripts": [
+        "comparison/gastrulation/plot_gastrulation_growth_program_auroc_by_stage.py"
+      ]
+    },
+    {
+      "figure": "S3b; S4a",
+      "dataset": "gastrulation",
+      "description": "Held-out compositions and full-training metric bars (actual PDF panels)",
+      "scripts": [
+        "comparison/gastrulation/plot_gastrulation_loo_composition_selected_base.py",
+        "comparison/gastrulation/plot_gastrulation_full_train_six_metrics_revised.py"
+      ]
+    },
+    {
+      "figure": "S5; S6",
+      "dataset": "gastrulation",
+      "description": "Synchronization ablation, source taxonomy, lineage leakage and regulatory readouts",
+      "scripts": [
+        "comparison/gastrulation/plot_gastrulation_strict_loo_sync_ablation_matrix.py",
+        "comparison/gastrulation/plot_gastrulation_strict_loo_all_source_method_offlineage.py",
+        "comparison/gastrulation/plot_gastrulation_strict_loo1_rostral_endpoint_offlineage_table.py",
+        "comparison/gastrulation/plot_gastrulation_rostral_tss_heldout_e85.py"
+      ]
+    },
+    {
+      "figure": "S7",
+      "dataset": "gastrulation",
+      "description": "CRISPR reference, cross-modal response, growth programs and paired versus shuffled temporal concordance",
+      "scripts": [
+        "comparison/gastrulation/plot_gastrulation_observed_nmp_lineage_e85_e875.py",
+        "comparison/gastrulation/plot_gastrulation_crispr_t_cross_modal_response_scatter.py",
+        "comparison/gastrulation/plot_gastrulation_e85_lineage_growth_programs_no_genes.py",
+        "comparison/gastrulation/plot_gastrulation_coati_pair_shuffle_vertical.py"
+      ]
+    },
+    {
+      "figure": "S8",
+      "dataset": "gastrulation",
+      "description": "RNA/ATAC fields and stage-specific growth landscapes",
+      "scripts": [
+        "comparison/gastrulation/plot_gastrulation_unbalanced_dual_umap_flow.py",
+        "comparison/gastrulation/plot_gastrulation_unbalanced_growth_distribution.py"
+      ]
+    },
+    {
+      "figure": "Fig. 5",
+      "dataset": "pancreas",
+      "description": "Transition matrices, forward/stay/reverse/other fractions, ATAC edge/node error, composition residuals and mass decomposition",
+      "scripts": [
+        "comparison/pancreas/plot_pancreas_coati_celltype_transition_matrix.py",
+        "comparison/pancreas/plot_pancreas_six_method_forward_stay_ambiguous_table.py",
+        "comparison/pancreas/plot_pancreas_edge_node_atac_summary_table.py",
+        "comparison/pancreas/plot_pancreas_six_method_full_composition_residual_heatmap.py",
+        "comparison/pancreas/plot_pancreas_mass_stress_evidence.py"
+      ]
+    },
+    {
+      "figure": "S9",
+      "dataset": "pancreas",
+      "description": "Held-out E15.5 distributions, metrics and compositions",
+      "scripts": [
+        "comparison/pancreas/plot_pancreas_strict_loo_dual_umap.py",
+        "comparison/pancreas/plot_pancreas_strict_loo_six_metrics_revised.py",
+        "comparison/pancreas/plot_pancreas_strict_loo_celltype_composition.py"
+      ]
+    },
+    {
+      "figure": "S10",
+      "dataset": "pancreas",
+      "description": "Full-data composition changes and external-method LOO transition matrices",
+      "scripts": [
+        "comparison/pancreas/plot_pancreas_six_method_full_e145_e155_lineage_composition.py",
+        "comparison/pancreas/plot_pancreas_four_method_loo_transition_matrices.py"
+      ]
+    },
+    {
+      "figure": "S11 actual panels (caption says S12)",
+      "dataset": "pancreas",
+      "description": "Relative total mass and cell-type growth",
+      "scripts": [
+        "comparison/pancreas/plot_pancreas_relative_total_mass.py",
+        "comparison/pancreas/plot_pancreas_coati_cytobridge_mean_growth_by_stage.py"
+      ]
+    },
+    {
+      "figure": "S12 actual panels (caption says S11)",
+      "dataset": "pancreas",
+      "description": "ATAC module-distribution distances and top-two transition targets",
+      "scripts": [
+        "comparison/pancreas/plot_pancreas_atac_module_profile_weighted_summary.py",
+        "comparison/pancreas/plot_pancreas_full_top_two_targets_appendix.py"
+      ]
+    },
+    {
+      "figure": "Fig. 6a,b",
+      "dataset": "palate",
+      "description": "External H3K27ac/TF peak contrasts and ATAC substate recovery",
+      "scripts": [
+        "comparison/palate/plot_palate_external_peak_contrast_table.py",
+        "comparison/palate/evaluate_palate_loo_external_epigenetic_evidence.py",
+        "comparison/palate/plot_palate_atac_substate_f1_rare_no_rna_only.py",
+        "comparison/palate/evaluate_palate_loo_atac_regulatory_substates.py"
+      ]
+    },
+    {
+      "figure": "Fig. 6c",
+      "dataset": "palate",
+      "description": "Same-source H3K27ac fate AUROC and separation from cached trajectories",
+      "scripts": [
+        "comparison/palate/analyze_palate_full_atac_sync_ablation.py"
+      ]
+    },
+    {
+      "figure": "Fig. 6d; S15b",
+      "dataset": "palate",
+      "description": "Selected and supplementary temporal peak-gene readouts",
+      "scripts": [
+        "comparison/palate/plot_palate_peak_gene_max_correlation_supported_pairs.py",
+        "comparison/palate/plot_palate_coati_b_supplementary_pairs_2x3.py"
+      ]
+    },
+    {
+      "figure": "S13; S14",
+      "dataset": "palate",
+      "description": "Strict held-out E13.5/E14.0 metrics, distributions and compositions",
+      "scripts": [
+        "comparison/palate/plot_palate_strict_loo_six_metrics_revised.py",
+        "comparison/palate/plot_palate_strict_loo_dual_umap.py",
+        "comparison/palate/plot_palate_loo_celltype_composition.py"
+      ]
+    },
+    {
+      "figure": "S15a",
+      "dataset": "palate",
+      "description": "Full-data external regulatory peak contrast validation",
+      "scripts": [
+        "comparison/palate/evaluate_palate_full_external_epigenetic_evidence.py"
+      ]
+    },
+    {
+      "figure": "Fig. 7",
+      "dataset": "human_cerebral",
+      "description": "Source-line W2, growth programs, temporal concordance, mass associations and selected peak-gene lags",
+      "scripts": [
+        "comparison/human_cerebral/plot_human_cerebral_source_line_w2_combined_10pt.py",
+        "comparison/human_cerebral/plot_human_cerebral_growth_publication_redraw_10pt.py",
+        "comparison/human_cerebral/plot_human_cerebral_publication_redraw_10pt.py",
+        "comparison/human_cerebral/plot_human_cerebral_programme_mass_heatmap_cy0p5.py",
+        "comparison/human_cerebral/plot_human_cerebral_compact_main_lag_v3.py"
+      ]
+    },
+    {
+      "figure": "S16",
+      "dataset": "human_cerebral",
+      "description": "RNA/ATAC reconstruction against original cells/metacells; reference UMAPs; programme table in growth redraw",
+      "scripts": [
+        "comparison/human_cerebral/plot_human_cerebral_three_w2_vertical_a4.py",
+        "comparison/human_cerebral/plot_human_cerebral_original_metacell_umap_compact_10pt.py"
+      ]
+    },
+    {
+      "figure": "S17; S18",
+      "dataset": "multi_dataset",
+      "description": "Modality kinetic energy and joint RNA/ATAC discrepancy from precomputed results",
+      "scripts": [
+        "comparison/multi_dataset/plot_coati_transport_by_cy_four_datasets.py",
+        "comparison/multi_dataset/plot_combined_synchronization_ablation.py"
+      ]
+    },
+    {
+      "figure": "S19; S20",
+      "dataset": "gastrulation",
+      "description": "Gastrulation reference geometry and full/LOSO map AUROC",
+      "scripts": [
+        "comparison/gastrulation/plot_gastrulation_rna_atac_celltype_reference.py",
+        "comparison/gastrulation/plot_gastrulation_t_celltype_auroc_dotplot.py"
+      ]
+    },
+    {
+      "figure": "S19; S20",
+      "dataset": "pancreas",
+      "description": "Pancreas reference geometry and map AUROC",
+      "scripts": [
+        "comparison/pancreas/plot_pancreas_t_mapping_horizontal_and_umap.py"
+      ]
+    },
+    {
+      "figure": "S19; S21",
+      "dataset": "palate",
+      "description": "Palate reference geometry and map AUROC",
+      "scripts": [
+        "comparison/palate/plot_palate_rna_atac_celltype_reference.py",
+        "comparison/palate/analyze_palate_t_celltype_auroc.py"
+      ]
+    },
+    {
+      "figure": "S19; S21",
+      "dataset": "human_cerebral",
+      "description": "Organoid reference geometry and map AUROC",
+      "scripts": [
+        "comparison/human_cerebral/plot_human_cerebral_rna_atac_t_reference.py",
+        "comparison/human_cerebral/analyze_human_cerebral_t_celltype_source_auroc.py"
+      ]
+    },
+    {
+      "figure": "Fig. 2a",
+      "dataset": "gaussian_bump",
+      "description": "Original author plotting source; requires precomputed external assets as documented",
+      "scripts": [
+        "comparison/gaussian_bump/plot_gauss_summary.py"
+      ]
+    },
+    {
+      "figure": "Fig. 2b; S1a",
+      "dataset": "bifurcation",
+      "description": "Original author plotting source; requires precomputed external assets as documented",
+      "scripts": [
+        "comparison/bifurcation/plot_toysplit_summary.py"
+      ]
+    },
+    {
+      "figure": "Fig. 2c reference",
+      "dataset": "scmultisim",
+      "description": "Original author plotting source; requires precomputed external assets as documented",
+      "scripts": [
+        "comparison/scmultisim/plot_synthetic_overview.py"
+      ]
+    },
+    {
+      "figure": "S1c; S2a",
+      "dataset": "scmultisim",
+      "description": "Original author plotting source; requires precomputed external assets as documented",
+      "scripts": [
+        "comparison/scmultisim/make_ever_branch_jump_table.py"
+      ]
+    },
+    {
+      "figure": "S2b",
+      "dataset": "scmultisim",
+      "description": "Original author plotting source; requires precomputed external assets as documented",
+      "scripts": [
+        "comparison/scmultisim/make_combined_distribution_grid.py"
+      ]
+    },
+    {
+      "figure": "S2b supporting map grid",
+      "dataset": "scmultisim",
+      "description": "Original author plotting source; requires precomputed external assets as documented",
+      "scripts": [
+        "comparison/scmultisim/make_t_architecture_distribution_grid.py"
+      ]
+    },
+    {
+      "figure": "S1c; S2a correctness",
+      "dataset": "scmultisim",
+      "description": "Original author plotting source; requires precomputed external assets as documented",
+      "scripts": [
+        "comparison/scmultisim/make_observed_time_correctness_table.py"
+      ]
+    },
+    {
+      "figure": "S7b",
+      "dataset": "gastrulation",
+      "description": "Exact panel source identified by plotted content",
+      "scripts": [
+        "comparison/gastrulation/plot_gastrulation_t_mapping_validation_table.py"
+      ]
+    },
+    {
+      "figure": "S4b",
+      "dataset": "gastrulation",
+      "description": "Exact panel source identified by plotted content",
+      "scripts": [
+        "comparison/gastrulation/plot_gastrulation_full_train_coati_cy_tables.py"
+      ]
+    },
+    {
+      "figure": "Fig. 7b",
+      "dataset": "human_cerebral",
+      "description": "Exact panel source identified by plotted content",
+      "scripts": [
+        "comparison/human_cerebral/plot_human_cerebral_three_stage_mass_story_compact.py"
+      ]
+    },
+    {
+      "figure": "Fig. 7b supporting values",
+      "dataset": "human_cerebral",
+      "description": "Exact panel source identified by plotted content",
+      "scripts": [
+        "comparison/human_cerebral/plot_human_cerebral_three_stage_mass_story.py"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1993 @@
+[
+  {
+    "path": "model/TrajectoryNet/run_trajectorynet_seeded.py",
+    "source": "scripts/run_trajectorynet_seeded.py",
+    "sha256_original": "b24f781ae6d1d24624593129f523ddf857746b1844b6ea397a3c3f40a748de33",
+    "role": "entrypoint",
+    "dependencies": []
+  },
+  {
+    "path": "model/TrajectoryNet/run_trajectorynet_synthetic_reversed_3000.sh",
+    "source": "scripts/run_trajectorynet_synthetic_reversed_3000.sh",
+    "sha256_original": "ba63cb451521880c47dbc0472668bb7cbc0874567f6857cd1f1f01047b6a7693",
+    "role": "entrypoint",
+    "dependencies": [
+      "model/TrajectoryNet/analyze_trajectorynet_synthetic_reversed.py",
+      "common/plot_trajectorynet_loss.py",
+      "model/TrajectoryNet/prepare_synthetic_trajectorynet_reversed_input.py",
+      "model/TrajectoryNet/run_trajectorynet_seeded.py"
+    ]
+  },
+  {
+    "path": "model/TrajectoryNet/run_trajectorynet_gastrulation_20000.sh",
+    "source": "scripts/run_trajectorynet_gastrulation_20000.sh",
+    "sha256_original": "e6146994ebdaece02e0e2096b9a38ba4c2e52aadcc9051e0f0c61cad178503e5",
+    "role": "entrypoint",
+    "dependencies": [
+      "common/plot_trajectorynet_loss.py"
+    ]
+  },
+  {
+    "path": "model/TrajectoryNet/run_trajectorynet_gastrulation_loo_time1_20000.sh",
+    "source": "scripts/run_trajectorynet_gastrulation_loo_time1_20000.sh",
+    "sha256_original": "9171d5df88c6320079cf5309ba2e6b88a75dfcf60309ddb8858429e136df250c",
+    "role": "entrypoint",
+    "dependencies": [
+      "common/prepare_loo_time1_inputs.py",
+      "model/TrajectoryNet/run_trajectorynet_20000.sh"
+    ]
+  },
+  {
+    "path": "model/TrajectoryNet/run_trajectorynet_gastrulation_loo_time2_20000.sh",
+    "source": "scripts/run_trajectorynet_gastrulation_loo_time2_20000.sh",
+    "sha256_original": "caad9542db56cf7cd24cdac636e1d26d57ba0c4ce30ba2e710fa5a172a110491",
+    "role": "entrypoint",
+    "dependencies": [
+      "common/prepare_loo_inputs.py",
+      "model/TrajectoryNet/run_trajectorynet_20000.sh"
+    ]
+  },
+  {
+    "path": "model/TrajectoryNet/run_trajectorynet_palate_reversed_20000.sh",
+    "source": "scripts/run_trajectorynet_palate_reversed_20000.sh",
+    "sha256_original": "04f6ac7585043e16d98e2d5e04d086a03b0c44d8cfed26fab42da9a4a0809262",
+    "role": "entrypoint",
+    "dependencies": [
+      "common/plot_trajectorynet_loss.py",
+      "model/TrajectoryNet/prepare_palate_trajectorynet_reversed_input.py",
+      "model/TrajectoryNet/run_trajectorynet_seeded.py"
+    ]
+  },
+  {
+    "path": "model/TrajectoryNet/run_trajectorynet_palate_loo_time1_20000.sh",
+    "source": "scripts/run_trajectorynet_palate_loo_time1_20000.sh",
+    "sha256_original": "6391b40a052ceb03af6c93380d8fb84aba6153403c63c05f15bce3b32e1768f8",
+    "role": "entrypoint",
+    "dependencies": [
+      "model/TrajectoryNet/run_trajectorynet_gastrulation_20000.sh"
+    ]
+  },
+  {
+    "path": "model/TrajectoryNet/run_trajectorynet_palate_loo_time2_20000.sh",
+    "source": "scripts/run_trajectorynet_palate_loo_time2_20000.sh",
+    "sha256_original": "8763ca078698fe0d6feb3f761037348b73410cde5560fcfc07f48bcf4fa00420",
+    "role": "entrypoint",
+    "dependencies": [
+      "model/TrajectoryNet/run_trajectorynet_gastrulation_20000.sh"
+    ]
+  },
+  {
+    "path": "model/TrajectoryNet/run_trajectorynet_moscot_loo_time1_reversed_20000.sh",
+    "source": "scripts/run_trajectorynet_moscot_loo_time1_reversed_20000.sh",
+    "sha256_original": "672fe7f8553323a336ab9464ddfbfdb7e845e5553b7955aac97e153fccb95db1",
+    "role": "entrypoint",
+    "dependencies": [
+      "common/plot_trajectorynet_loss.py",
+      "model/TrajectoryNet/prepare_trajectorynet_moscot_loo_time1_reversed_input.py",
+      "model/TrajectoryNet/run_trajectorynet_seeded.py"
+    ]
+  },
+  {
+    "path": "model/TrajectoryNet/run_trajectorynet_20000.sh",
+    "source": "scripts/run_trajectorynet_20000.sh",
+    "sha256_original": "e03781b2c0362fbc36d9be97e12080bbfca0ff6a41cdce435ac8a3e613cea2bf",
+    "role": "entrypoint",
+    "dependencies": [
+      "common/plot_trajectorynet_loss.py"
+    ]
+  },
+  {
+    "path": "model/TrajectoryNet/run_trajectorynet_human_cerebral_7time_full_forward_30000.sh",
+    "source": "scripts/run_trajectorynet_human_cerebral_7time_full_forward_30000.sh",
+    "sha256_original": "8281b17220f46a541d99a0913096ecea4c1fa40f9695baa4edd40182cba0bbe8",
+    "role": "entrypoint",
+    "dependencies": [
+      "model/TrajectoryNet/check_human_cerebral_7time_trajectorynet_mioflow_setup.py",
+      "common/plot_trajectorynet_loss.py",
+      "model/TrajectoryNet/prepare_human_cerebral_7time_trajectorynet_forward_input.py",
+      "model/TrajectoryNet/run_trajectorynet_seeded.py"
+    ]
+  },
+  {
+    "path": "model/TrajectoryNet/run_trajectorynet_human_cerebral_7time_loo_30000.sh",
+    "source": "scripts/run_trajectorynet_human_cerebral_7time_loo_30000.sh",
+    "sha256_original": "33b9c740075cc9d5fe4027e2165f9335b60bc41b6e43e242650149a2c10994cd",
+    "role": "entrypoint",
+    "dependencies": [
+      "model/TrajectoryNet/check_human_cerebral_7time_trajectorynet_mioflow_loo_setup.py",
+      "common/plot_trajectorynet_loss.py",
+      "model/TrajectoryNet/prepare_human_cerebral_7time_trajectorynet_mioflow_loo_inputs.py",
+      "model/TrajectoryNet/run_trajectorynet_seeded.py"
+    ]
+  },
+  {
+    "path": "model/TrajectoryNet/analyze_trajectorynet_synthetic_reversed.py",
+    "source": "scripts/analyze_trajectorynet_synthetic_reversed.py",
+    "sha256_original": "13f1dbb6f32f6824604ab6067a19366bcee5bc07b93704bac3377a931ee31d0e",
+    "role": "entrypoint",
+    "dependencies": [
+      "comparison/scmultisim/analyze_cytobridge_synthetic.py",
+      "common/evaluate_terminal_push.py",
+      "common/transform_joblib_umap.py"
+    ]
+  },
+  {
+    "path": "model/MIOFlow/train_mioflow_10000.py",
+    "source": "scripts/train_mioflow_10000.py",
+    "sha256_original": "d136dcd7fe840e9a5dad79ffd01046e0911c11b9cf514a81a4aec7ef966e7b2b",
+    "role": "entrypoint",
+    "dependencies": []
+  },
+  {
+    "path": "model/MIOFlow/run_mioflow_synthetic_gaga10_3000.sh",
+    "source": "scripts/run_mioflow_synthetic_gaga10_3000.sh",
+    "sha256_original": "0dc7cf32381e8096f78a0209310689d59a2a7eee124967877edea7bb72da345d",
+    "role": "entrypoint",
+    "dependencies": [
+      "model/MIOFlow/analyze_mioflow_synthetic.py",
+      "model/MIOFlow/train_mioflow_10000.py"
+    ]
+  },
+  {
+    "path": "model/MIOFlow/run_mioflow_moscot_full_shared_gaga10_n1024_20000.sh",
+    "source": "scripts/run_mioflow_moscot_full_shared_gaga10_n1024_20000.sh",
+    "sha256_original": "9950bbbfe823b479cedeaf7451f4d5a724bb13dd6edd3fad62d34bff77785e1d",
+    "role": "entrypoint",
+    "dependencies": [
+      "model/MIOFlow/check_mioflow_moscot_shared_full_gaga10.py",
+      "model/MIOFlow/run_mioflow_pca_gaga10_n1024_20000.sh"
+    ]
+  },
+  {
+    "path": "model/MIOFlow/run_mioflow_palate_gaga10_20000.sh",
+    "source": "scripts/run_mioflow_palate_gaga10_20000.sh",
+    "sha256_original": "e7f017a2f72561d81e9b1b878fb8cdde2f22fe714fc3fb614f355aa3616ad334",
+    "role": "entrypoint",
+    "dependencies": [
+      "model/MIOFlow/run_mioflow_pca_gaga10_n1024_20000.sh"
+    ]
+  },
+  {
+    "path": "model/MIOFlow/run_mioflow_human_cerebral_7time_full_official_gaga10_n256_30000.sh",
+    "source": "scripts/run_mioflow_human_cerebral_7time_full_official_gaga10_n256_30000.sh",
+    "sha256_original": "4062f03cc19640e5705ee011b6c64a7eaa27bf2fc083a5ed9b9c3f5d12030da6",
+    "role": "entrypoint",
+    "dependencies": [
+      "comparison/human_cerebral/annotate_mioflow_human_cerebral_7time_time_axis.py",
+      "model/TrajectoryNet/check_human_cerebral_7time_trajectorynet_mioflow_setup.py",
+      "model/TrajectoryNet/prepare_human_cerebral_7time_trajectorynet_mioflow_inputs.py",
+      "model/MIOFlow/train_mioflow_10000.py"
+    ]
+  },
+  {
+    "path": "model/MIOFlow/run_mioflow_human_cerebral_7time_loo_full_gaga10_n256_30000.sh",
+    "source": "scripts/run_mioflow_human_cerebral_7time_loo_full_gaga10_n256_30000.sh",
+    "sha256_original": "dfb04b5c2dad88f7ad6350db2f94025c8eb3f229ca8ddf3a0bbe4ce7cea75e99",
+    "role": "entrypoint",
+    "dependencies": [
+      "comparison/human_cerebral/annotate_mioflow_human_cerebral_7time_time_axis.py",
+      "model/TrajectoryNet/check_human_cerebral_7time_trajectorynet_mioflow_loo_setup.py",
+      "model/TrajectoryNet/prepare_human_cerebral_7time_trajectorynet_mioflow_loo_inputs.py",
+      "model/MIOFlow/train_mioflow_10000.py"
+    ]
+  },
+  {
+    "path": "model/MIOFlow/analyze_mioflow_synthetic.py",
+    "source": "scripts/analyze_mioflow_synthetic.py",
+    "sha256_original": "86d046c72f6e81a978ece97a4df6665523601c710c2754f206e32ac0c216e409",
+    "role": "entrypoint",
+    "dependencies": [
+      "comparison/scmultisim/analyze_cytobridge_synthetic.py",
+      "common/evaluate_mioflow_terminal_push.py",
+      "common/transform_joblib_umap.py"
+    ]
+  },
+  {
+    "path": "model/CytoBridge/train_cytobridge_20000.py",
+    "source": "scripts/train_cytobridge_20000.py",
+    "sha256_original": "20990bd9cdbb82c5d24dc274682c4d2c4df78702e69966f4105690ad4ac45d00",
+    "role": "entrypoint",
+    "dependencies": []
+  },
+  {
+    "path": "model/CytoBridge/train_cytobridge_unbalanced.py",
+    "source": "scripts/train_cytobridge_unbalanced.py",
+    "sha256_original": "f1e4fc4be291b9093f0a8365a5089c13882e18807870d29f10b983dd037cfc81",
+    "role": "entrypoint",
+    "dependencies": []
+  },
+  {
+    "path": "model/CytoBridge/train_cytobridge_synthetic_official_config_sum.py",
+    "source": "scripts/train_cytobridge_synthetic_official_config_sum.py",
+    "sha256_original": "d8336c55a3cc798013c947ccc9931428b5c41c58a7aeb5035b894bd8eb27df33",
+    "role": "entrypoint",
+    "dependencies": []
+  },
+  {
+    "path": "model/CytoBridge/run_cytobridge_synthetic_official_config_sum_3000.sh",
+    "source": "scripts/run_cytobridge_synthetic_official_config_sum_3000.sh",
+    "sha256_original": "d251085eb95a72ffcd467303636299939bce1e7c390b5d834514c72d6118251d",
+    "role": "entrypoint",
+    "dependencies": [
+      "comparison/scmultisim/cache_cytobridge_synthetic_observed_times.py",
+      "comparison/scmultisim/evaluate_synthetic_predicted_time_sinkhorn.py",
+      "common/plot_coati_cytobridge_observed_time_umap.py",
+      "comparison/scmultisim/plot_cytobridge_synthetic_convergence.py",
+      "model/CytoBridge/prepare_synthetic_cytobridge_inputs.py",
+      "model/CytoBridge/train_cytobridge_synthetic_official_config_sum.py"
+    ]
+  },
+  {
+    "path": "model/CytoBridge/run_cytobridge_gastrulation_20000.sh",
+    "source": "scripts/run_cytobridge_gastrulation_20000.sh",
+    "sha256_original": "e41a779732848f1a2e149558b26823b03d889f0ab65828c71f78c37857d4c77b",
+    "role": "entrypoint",
+    "dependencies": [
+      "model/CytoBridge/train_cytobridge_20000.py"
+    ]
+  },
+  {
+    "path": "model/CytoBridge/run_cytobridge_gastrulation_unbalanced_20000.sh",
+    "source": "scripts/run_cytobridge_gastrulation_unbalanced_20000.sh",
+    "sha256_original": "233b916c6e76f5ffa859057b26bfbc019267eda74d70900d52611a2c808547e5",
+    "role": "entrypoint",
+    "dependencies": [
+      "model/CytoBridge/train_cytobridge_unbalanced.py"
+    ]
+  },
+  {
+    "path": "model/CytoBridge/run_cytobridge_gastrulation_loo_time1_20000.sh",
+    "source": "scripts/run_cytobridge_gastrulation_loo_time1_20000.sh",
+    "sha256_original": "4c4acd49f5f1ce7daacc76101c1725178a5760fcf3c4a1922cc56e68c21c510f",
+    "role": "entrypoint",
+    "dependencies": [
+      "common/prepare_loo_time1_inputs.py",
+      "model/CytoBridge/run_cytobridge_20000.sh"
+    ]
+  },
+  {
+    "path": "model/CytoBridge/run_cytobridge_gastrulation_loo_time2_20000.sh",
+    "source": "scripts/run_cytobridge_gastrulation_loo_time2_20000.sh",
+    "sha256_original": "833d7e77ca00509416ec1a58a4ff6bd31ff8b95c13560e3994deff3aae8f1154",
+    "role": "entrypoint",
+    "dependencies": [
+      "common/prepare_loo_inputs.py",
+      "model/CytoBridge/run_cytobridge_20000.sh"
+    ]
+  },
+  {
+    "path": "model/CytoBridge/run_cytobridge_gastrulation_unbalanced_loo_time1_20000.sh",
+    "source": "scripts/run_cytobridge_gastrulation_unbalanced_loo_time1_20000.sh",
+    "sha256_original": "f8d6785fc9d8f02e40c6852a49fa2ca270545e1055989f34eea4b14aa3acbeea",
+    "role": "entrypoint",
+    "dependencies": [
+      "common/prepare_loo_time1_inputs.py",
+      "model/CytoBridge/run_cytobridge_gastrulation_unbalanced_20000.sh"
+    ]
+  },
+  {
+    "path": "model/CytoBridge/run_cytobridge_gastrulation_unbalanced_loo_time2_20000.sh",
+    "source": "scripts/run_cytobridge_gastrulation_unbalanced_loo_time2_20000.sh",
+    "sha256_original": "37d8249cdd7c0ba4df36fc5715618e5b841d2a64e1ff3adf8a2d46ca9ba44243",
+    "role": "entrypoint",
+    "dependencies": [
+      "common/prepare_loo_inputs.py",
+      "model/CytoBridge/run_cytobridge_gastrulation_unbalanced_20000.sh"
+    ]
+  },
+  {
+    "path": "model/CytoBridge/run_cytobridge_palate_20000.sh",
+    "source": "scripts/run_cytobridge_palate_20000.sh",
+    "sha256_original": "0c36b20feb2f66957713fa439828cfb3576ebafdf715eb19f352f975dc483294",
+    "role": "entrypoint",
+    "dependencies": [
+      "model/CytoBridge/run_cytobridge_gastrulation_20000.sh"
+    ]
+  },
+  {
+    "path": "model/CytoBridge/run_cytobridge_palate_unbalanced_20000.sh",
+    "source": "scripts/run_cytobridge_palate_unbalanced_20000.sh",
+    "sha256_original": "55444c5507ac130881eeb27ee585cf3a5921c1b6aa9e603e81074b646cf3061c",
+    "role": "entrypoint",
+    "dependencies": [
+      "model/CytoBridge/run_cytobridge_gastrulation_unbalanced_20000.sh"
+    ]
+  },
+  {
+    "path": "model/CytoBridge/run_cytobridge_palate_loo_time1_20000.sh",
+    "source": "scripts/run_cytobridge_palate_loo_time1_20000.sh",
+    "sha256_original": "e547607e653f9f090416f3f5e397461bfb8b3a491c9e6fcc908f42e8342ee0fe",
+    "role": "entrypoint",
+    "dependencies": [
+      "model/CytoBridge/run_cytobridge_gastrulation_20000.sh"
+    ]
+  },
+  {
+    "path": "model/CytoBridge/run_cytobridge_palate_loo_time2_20000.sh",
+    "source": "scripts/run_cytobridge_palate_loo_time2_20000.sh",
+    "sha256_original": "a237345299a6566a6c675c2d87d60205fc500c6cdc90658c414efbfbeb843302",
+    "role": "entrypoint",
+    "dependencies": [
+      "model/CytoBridge/run_cytobridge_gastrulation_20000.sh"
+    ]
+  },
+  {
+    "path": "model/CytoBridge/run_cytobridge_palate_unbalanced_loo_time1_20000.sh",
+    "source": "scripts/run_cytobridge_palate_unbalanced_loo_time1_20000.sh",
+    "sha256_original": "bf3161f87be54488551703baf12ee2ba9bccd1c9c84e01c47a6c2c3ae48fb773",
+    "role": "entrypoint",
+    "dependencies": [
+      "model/CytoBridge/run_cytobridge_gastrulation_unbalanced_20000.sh"
+    ]
+  },
+  {
+    "path": "model/CytoBridge/run_cytobridge_palate_unbalanced_loo_time2_20000.sh",
+    "source": "scripts/run_cytobridge_palate_unbalanced_loo_time2_20000.sh",
+    "sha256_original": "b39fed78ee73fcc08ee1383bffcb0f40fe01c50029253ff17c9a1a9e43d1e509",
+    "role": "entrypoint",
+    "dependencies": [
+      "model/CytoBridge/run_cytobridge_gastrulation_unbalanced_20000.sh"
+    ]
+  },
+  {
+    "path": "model/CytoBridge/run_cytobridge_moscot_balanced_loo_time1_20000.sh",
+    "source": "scripts/run_cytobridge_moscot_balanced_loo_time1_20000.sh",
+    "sha256_original": "d1ce84b4291864c1a4762452647bea5ec53bc64ee2151f8eaee4306278e692fb",
+    "role": "entrypoint",
+    "dependencies": [
+      "model/CytoBridge/run_cytobridge_loo_time1_20000.sh"
+    ]
+  },
+  {
+    "path": "model/CytoBridge/run_cytobridge_moscot_unbalanced_20000.sh",
+    "source": "scripts/run_cytobridge_moscot_unbalanced_20000.sh",
+    "sha256_original": "488449cd1d237a8544cdd5bf434b7428c1d3a51f244e3e67904199ff039149fc",
+    "role": "entrypoint",
+    "dependencies": [
+      "model/CytoBridge/run_cytobridge_gastrulation_unbalanced_20000.sh"
+    ]
+  },
+  {
+    "path": "model/CytoBridge/run_cytobridge_moscot_unbalanced_loo_time1_20000.sh",
+    "source": "scripts/run_cytobridge_moscot_unbalanced_loo_time1_20000.sh",
+    "sha256_original": "b98a5a2b0086befce9af113f6087c81a1e2b69aa05a3198351f71b3fd9090ed4",
+    "role": "entrypoint",
+    "dependencies": [
+      "common/prepare_loo_time1_inputs.py",
+      "model/CytoBridge/run_cytobridge_gastrulation_unbalanced_20000.sh"
+    ]
+  },
+  {
+    "path": "model/CytoBridge/run_cytobridge_human_cerebral_7time_balanced_30000.sh",
+    "source": "scripts/run_cytobridge_human_cerebral_7time_balanced_30000.sh",
+    "sha256_original": "e9a63230d62589e9cef930b99c36faddd7a1efc6038dfd805ce9ab6d1a94cd18",
+    "role": "entrypoint",
+    "dependencies": [
+      "model/CytoBridge/check_human_cerebral_7time_cytobridge_setup.py",
+      "model/CytoBridge/prepare_human_cerebral_7time_cytobridge_inputs.py",
+      "model/CytoBridge/train_cytobridge_20000.py"
+    ]
+  },
+  {
+    "path": "model/CytoBridge/run_cytobridge_human_cerebral_7time_unbalanced_30000.sh",
+    "source": "scripts/run_cytobridge_human_cerebral_7time_unbalanced_30000.sh",
+    "sha256_original": "174ee9341c975fc45944cf903170496019db3b2c8e11c2814986dcf86560a084",
+    "role": "entrypoint",
+    "dependencies": [
+      "model/CytoBridge/check_human_cerebral_7time_cytobridge_setup.py",
+      "model/CytoBridge/prepare_human_cerebral_7time_cytobridge_inputs.py",
+      "model/CytoBridge/train_cytobridge_unbalanced.py"
+    ]
+  },
+  {
+    "path": "model/CytoBridge/run_cytobridge_human_cerebral_7time_loo_30000.sh",
+    "source": "scripts/run_cytobridge_human_cerebral_7time_loo_30000.sh",
+    "sha256_original": "5ca1b9d61663cb392ed48f3968b0256a89e295418f2accd179f06fa6def9eb1e",
+    "role": "entrypoint",
+    "dependencies": [
+      "model/CytoBridge/check_human_cerebral_7time_cytobridge_loo_setup.py",
+      "model/CytoBridge/prepare_human_cerebral_7time_cytobridge_loo_inputs.py",
+      "model/CytoBridge/train_cytobridge_20000.py",
+      "model/CytoBridge/train_cytobridge_unbalanced.py"
+    ]
+  },
+  {
+    "path": "model/TIGON/run_tigon_frozen_official_ae_embedding.py",
+    "source": "scripts/run_tigon_frozen_official_ae_embedding.py",
+    "sha256_original": "d0b54c127505515ecf76f5b90633a89fc72cf056eab5c15d91d238d5423e9acb",
+    "role": "entrypoint",
+    "dependencies": [
+      "model/TIGON/tigon_official_ae_common.py"
+    ]
+  },
+  {
+    "path": "model/TIGON/prepare_tigon_gastrulation_upstream_public_exact_v2.sh",
+    "source": "scripts/prepare_tigon_gastrulation_upstream_public_exact_v2.sh",
+    "sha256_original": "a5a584c50d972a5c31ca5354072016fea01e5129ff1033d4f071d912243c8d76",
+    "role": "entrypoint",
+    "dependencies": [
+      "model/TIGON/prepare_tigon_gastrulation_official_ae_common_pca_bridge.py",
+      "model/TIGON/prepare_tigon_official_ae_embedding.py"
+    ]
+  },
+  {
+    "path": "model/TIGON/run_tigon_gastrulation_upstream_public_exact_v2.sh",
+    "source": "scripts/run_tigon_gastrulation_upstream_public_exact_v2.sh",
+    "sha256_original": "31847a3e356d43ee3b72ac4c19db0cf55500c0689fdab1200a30086e58c6df48",
+    "role": "entrypoint",
+    "dependencies": [
+      "model/TIGON/evaluate_tigon_selected_checkpoint.py",
+      "model/TIGON/evaluate_tigon_selected_checkpoint_common_pca.py",
+      "model/TIGON/run_tigon_frozen_official_ae_embedding.py",
+      "model/TIGON/select_tigon_observed_checkpoint.py"
+    ]
+  },
+  {
+    "path": "model/TIGON/check_tigon_upstream_public_equivalence.py",
+    "source": "scripts/check_tigon_upstream_public_equivalence.py",
+    "sha256_original": "3611ff986eb16de07439e0eee06047bf68e5ca88c4417f158d4e7bcc6cbacbd8",
+    "role": "entrypoint",
+    "dependencies": [
+      "model/TIGON/tigon_official_ae_common.py"
+    ]
+  },
+  {
+    "path": "model/TIGON/check_tigon_gastrulation_upstream_public_exact_v2.py",
+    "source": "scripts/check_tigon_gastrulation_upstream_public_exact_v2.py",
+    "sha256_original": "0748f9ed3e9804111207aeb64371e9f150c25e1446835c00824d81b2e03e3c3a",
+    "role": "entrypoint",
+    "dependencies": [
+      "model/TIGON/run_tigon_frozen_official_ae_embedding.py",
+      "model/TIGON/tigon_official_ae_common.py"
+    ]
+  },
+  {
+    "path": "model/TIGON/prepare_tigon_moscot_upstream_public_exact_ae5.sh",
+    "source": "scripts/prepare_tigon_moscot_upstream_public_exact_ae5.sh",
+    "sha256_original": "7e848705f30814532b0ca3f5eef9517c464dd0d385fa6fad92d1ec1aacd0045e",
+    "role": "entrypoint",
+    "dependencies": [
+      "model/TIGON/check_tigon_moscot_upstream_public_exact_ae5.py",
+      "model/TIGON/prepare_tigon_moscot_official_ae_common_pca_bridge.py",
+      "model/TIGON/prepare_tigon_official_ae_embedding.py"
+    ]
+  },
+  {
+    "path": "model/TIGON/run_tigon_moscot_upstream_public_exact_ae5_20000.sh",
+    "source": "scripts/run_tigon_moscot_upstream_public_exact_ae5_20000.sh",
+    "sha256_original": "45f097109ff77262ce451f5837723297f4991991bab99fd71386a5d6aa4e1fb4",
+    "role": "entrypoint",
+    "dependencies": [
+      "model/TIGON/check_tigon_moscot_upstream_public_exact_ae5.py",
+      "model/TIGON/evaluate_tigon_selected_checkpoint.py",
+      "model/TIGON/prepare_tigon_moscot_upstream_public_exact_ae5.sh",
+      "model/TIGON/run_tigon_frozen_official_ae_embedding.py",
+      "model/TIGON/select_tigon_observed_checkpoint.py"
+    ]
+  },
+  {
+    "path": "model/TIGON/run_tigon_palate_strict_official_ae10_20000.sh",
+    "source": "scripts/run_tigon_palate_strict_official_ae10_20000.sh",
+    "sha256_original": "a5855adcd5e431f3900f914720b39b7b1c0fcf33b37fe7ebbab8d74ecaab75ee",
+    "role": "entrypoint",
+    "dependencies": [
+      "model/TIGON/prepare_tigon_official_ae_embedding.py",
+      "model/TIGON/run_tigon_official_ae10_dopri5_exact_n1024_20000.sh"
+    ]
+  },
+  {
+    "path": "model/TIGON/run_tigon_human_cerebral_strict_official_ae10_20000.sh",
+    "source": "scripts/run_tigon_human_cerebral_strict_official_ae10_20000.sh",
+    "sha256_original": "752a6fecf8dc4169b8968b3280ad0f632dc8716be6b6e910c9fedd11d41ccdf6",
+    "role": "entrypoint",
+    "dependencies": [
+      "model/TIGON/prepare_tigon_official_ae_embedding.py",
+      "model/TIGON/run_tigon_frozen_official_ae_embedding.py"
+    ]
+  },
+  {
+    "path": "model/TIGON/run_tigon_synthetic_pca10_minus2_2_official_3000.sh",
+    "source": "scripts/run_tigon_synthetic_pca10_minus2_2_official_3000.sh",
+    "sha256_original": "bcfad73a06ae9fa2688c09722d6aebb68f1acdce16ecb79b37e6f9f37e23ec10",
+    "role": "entrypoint",
+    "dependencies": [
+      "comparison/scmultisim/analyze_tigon_synthetic.py"
+    ]
+  },
+  {
+    "path": "comparison/scmultisim/plot_synthetic_truth_method_columns_a4.py",
+    "source": "scripts/plot_synthetic_truth_method_columns_a4.py",
+    "sha256_original": "3235426f97432c7abfe406040cd3cb925daa833d13349a5f61897abd57f248ed",
+    "role": "entrypoint",
+    "dependencies": [
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/scmultisim/plot_synthetic_coati_cytobridge_reversed_tn_comparison.py",
+    "source": "scripts/plot_synthetic_coati_cytobridge_reversed_tn_comparison.py",
+    "sha256_original": "d2a7ff126806e76761d43360b907989c77d020ed9e4effcfcdf7c08c6036e1c1",
+    "role": "entrypoint",
+    "dependencies": []
+  },
+  {
+    "path": "comparison/scmultisim/evaluate_synthetic_predicted_time_sinkhorn.py",
+    "source": "scripts/evaluate_synthetic_predicted_time_sinkhorn.py",
+    "sha256_original": "a9dad664d5613fa5e14fc3d1d2699aac7833a20a333814f8cd69384388f6dc3a",
+    "role": "entrypoint",
+    "dependencies": []
+  },
+  {
+    "path": "comparison/gastrulation/plot_gastrulation_loo_rna_umap_selected_base.py",
+    "source": "scripts/plot_gastrulation_loo_rna_umap_selected_base.py",
+    "sha256_original": "bc92344cfdb2560606a4691640c824e304e17cccf87d6d71ef3178e8e6075be2",
+    "role": "entrypoint",
+    "dependencies": [
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/gastrulation/plot_gastrulation_loo_atac_umap_selected_methods.py",
+    "source": "scripts/plot_gastrulation_loo_atac_umap_selected_methods.py",
+    "sha256_original": "f67adf56f48028728f4276f08221068886ab4b6b4224be3ba62dda58ff9f1496",
+    "role": "entrypoint",
+    "dependencies": []
+  },
+  {
+    "path": "comparison/gastrulation/plot_gastrulation_strict_loo_six_metrics_revised.py",
+    "source": "scripts/plot_gastrulation_strict_loo_six_metrics_revised.py",
+    "sha256_original": "b7b58ac78a46346201ac0854305854a4b4332e7e7ed12e412953ab3b4b6e69e2",
+    "role": "entrypoint",
+    "dependencies": [
+      "comparison/gastrulation/evaluate_gastrulation_full_cmcc.py",
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/gastrulation/plot_gastrulation_nmp_mass_decomposition_confirmed.py",
+    "source": "scripts/plot_gastrulation_nmp_mass_decomposition_confirmed.py",
+    "sha256_original": "10312ea57420683e8d6b71e1512e9bc1f34ef370ca7c9a1c9012eec7aec93e8d",
+    "role": "entrypoint",
+    "dependencies": []
+  },
+  {
+    "path": "comparison/gastrulation/analyze_gastrulation_full_nmp_mass_decomposition_three_unbalanced.py",
+    "source": "scripts/analyze_gastrulation_full_nmp_mass_decomposition_three_unbalanced.py",
+    "sha256_original": "2515b8491b62804dac5e88f448ed48edb72b88dc08620d19bd58bbde87b93d27",
+    "role": "entrypoint",
+    "dependencies": [
+      "comparison/gastrulation/compare_gastrulation_unbalanced_nmp_decomposition.py",
+      "comparison/gastrulation/decompose_gastrulation_nmp_mass_change.py",
+      "comparison/gastrulation/evaluate_gastrulation_flow_methods_normalized.py",
+      "model/TIGON/tigon_checkpoint_evaluation_common.py",
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/gastrulation/plot_gastrulation_crispr_t_rna_terminal_composition.py",
+    "source": "scripts/plot_gastrulation_crispr_t_rna_terminal_composition.py",
+    "sha256_original": "28455bd376232ae37fb0f287003dd0b717d5c30ed04633a446962454a79dbfa0",
+    "role": "entrypoint",
+    "dependencies": [
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/gastrulation/plot_gastrulation_lineage_transition_cosine_compact.py",
+    "source": "scripts/plot_gastrulation_lineage_transition_cosine_compact.py",
+    "sha256_original": "15ae6f622088570404ceb5eabfbf1f5b9e3dd5100a00384ca820e5a31a5841ed",
+    "role": "entrypoint",
+    "dependencies": [
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/gastrulation/compare_gastrulation_somitic_core_rna_atac_cosine.py",
+    "source": "scripts/compare_gastrulation_somitic_core_rna_atac_cosine.py",
+    "sha256_original": "179d0ce159a6e33873f0114e95a0d7fa2392f1b1750181d44071fbc9ecd01e4c",
+    "role": "entrypoint",
+    "dependencies": [
+      "comparison/gastrulation/analyze_gastrulation_loo_regulatory_edges.py",
+      "comparison/gastrulation/evaluate_gastrulation_full_cmcc.py",
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/gastrulation/plot_gastrulation_coati_objective_rank1_three_pairs.py",
+    "source": "scripts/plot_gastrulation_coati_objective_rank1_three_pairs.py",
+    "sha256_original": "8b1b499cb9ab73cdba0182ab6ae578c7ea997d46e026e4b613137cf1d84cecc4",
+    "role": "entrypoint",
+    "dependencies": [
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/gastrulation/plot_gastrulation_growth_program_auroc_by_stage.py",
+    "source": "scripts/plot_gastrulation_growth_program_auroc_by_stage.py",
+    "sha256_original": "9e5845df4a5b3a02ff5f239fb53c8f6e13da1cd56ec48bed98679b210bca8518",
+    "role": "entrypoint",
+    "dependencies": [
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/gastrulation/plot_gastrulation_loo_composition_selected_base.py",
+    "source": "scripts/plot_gastrulation_loo_composition_selected_base.py",
+    "sha256_original": "1ad4c9037e1a87a4ecb83987afb4f3621eb06f0aa736427dc0343cd07d6c4518",
+    "role": "entrypoint",
+    "dependencies": [
+      "comparison/gastrulation/evaluate_gastrulation_full_cmcc.py",
+      "comparison/gastrulation/evaluate_gastrulation_loo_time1_paired_1nn_atac.py",
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/gastrulation/plot_gastrulation_full_train_six_metrics_revised.py",
+    "source": "scripts/plot_gastrulation_full_train_six_metrics_revised.py",
+    "sha256_original": "7c40a4c4e434fa31516570b7996dc0ef7b3b58853fc8ce695f5cc883e27b69d8",
+    "role": "entrypoint",
+    "dependencies": [
+      "comparison/gastrulation/evaluate_gastrulation_full_cmcc.py",
+      "comparison/gastrulation/evaluate_gastrulation_full_train_fit_six_metrics.py",
+      "comparison/gastrulation/plot_gastrulation_strict_loo_six_metrics_revised.py"
+    ]
+  },
+  {
+    "path": "comparison/gastrulation/plot_gastrulation_strict_loo_sync_ablation_matrix.py",
+    "source": "scripts/plot_gastrulation_strict_loo_sync_ablation_matrix.py",
+    "sha256_original": "10920caa69e2d50c5bc4e6445639828ed38a3c51f6f811da7a96f4ffcfee0936",
+    "role": "entrypoint",
+    "dependencies": [
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/gastrulation/plot_gastrulation_strict_loo_all_source_method_offlineage.py",
+    "source": "scripts/plot_gastrulation_strict_loo_all_source_method_offlineage.py",
+    "sha256_original": "1f7aa1abcab9d2fb94b53f4937796119c348cfa771c8e096d96e12685784e43b",
+    "role": "entrypoint",
+    "dependencies": [
+      "comparison/gastrulation/analyze_gastrulation_loo_source_lineage_fidelity.py",
+      "comparison/gastrulation/analyze_gastrulation_strict_loo1_all_source_offlineage.py",
+      "comparison/gastrulation/analyze_gastrulation_strict_loo1_rostral_endpoint_offlineage.py",
+      "comparison/gastrulation/analyze_gastrulation_strict_loo2_all_source_offlineage.py",
+      "comparison/gastrulation/evaluate_gastrulation_full_cmcc.py",
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/gastrulation/plot_gastrulation_strict_loo1_rostral_endpoint_offlineage_table.py",
+    "source": "scripts/plot_gastrulation_strict_loo1_rostral_endpoint_offlineage_table.py",
+    "sha256_original": "c0a9f0d7c1a452b08c0d0781502569209f6db8bf38408f7dffbf262c5e44765a",
+    "role": "entrypoint",
+    "dependencies": [
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/gastrulation/plot_gastrulation_rostral_tss_heldout_e85.py",
+    "source": "scripts/plot_gastrulation_rostral_tss_heldout_e85.py",
+    "sha256_original": "2053fe6c22127efe2a00597cf66b6bd790879d2f655abe66768cbfa19490310d",
+    "role": "entrypoint",
+    "dependencies": [
+      "comparison/gastrulation/analyze_gastrulation_loo_rostral_gross_cross_lineage.py",
+      "comparison/gastrulation/analyze_gastrulation_strict_loo2_all_source_offlineage.py",
+      "comparison/gastrulation/evaluate_gastrulation_full_cmcc.py",
+      "comparison/gastrulation/plot_gastrulation_rostral_tss_ablation.py",
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/gastrulation/plot_gastrulation_observed_nmp_lineage_e85_e875.py",
+    "source": "scripts/plot_gastrulation_observed_nmp_lineage_e85_e875.py",
+    "sha256_original": "52289c8429b5f35246585c196c51ab5b0cc11f36b1d8d8523eaf84faaa362091",
+    "role": "entrypoint",
+    "dependencies": [
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/gastrulation/plot_gastrulation_crispr_t_cross_modal_response_scatter.py",
+    "source": "scripts/plot_gastrulation_crispr_t_cross_modal_response_scatter.py",
+    "sha256_original": "710f4cd66a6b96e4aec5c245f9330675fb952e040400a3ba7ad2dd417b3e9243",
+    "role": "entrypoint",
+    "dependencies": [
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/gastrulation/plot_gastrulation_e85_lineage_growth_programs_no_genes.py",
+    "source": "scripts/plot_gastrulation_e85_lineage_growth_programs_no_genes.py",
+    "sha256_original": "140b5717ee5d9820d553cf479434853b211ae9cdadbfc98359e57c488fb611be",
+    "role": "entrypoint",
+    "dependencies": [
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/gastrulation/plot_gastrulation_coati_pair_shuffle_vertical.py",
+    "source": "scripts/plot_gastrulation_coati_pair_shuffle_vertical.py",
+    "sha256_original": "955e2bc617b8f9353e4c73cbf8600af535cfc2546ee003749a5e4ad17705cb5f",
+    "role": "entrypoint",
+    "dependencies": []
+  },
+  {
+    "path": "comparison/gastrulation/plot_gastrulation_coati_dual_umap_flow.py",
+    "source": "scripts/plot_gastrulation_coati_dual_umap_flow.py",
+    "sha256_original": "c4f8f5aa052b16386e32756d23642c20d4b6d892a15d9f2881668f9b20c27df6",
+    "role": "entrypoint",
+    "dependencies": [
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/gastrulation/plot_unbalanced_rnaonly_growth_umap_by_time.py",
+    "source": "scripts/plot_unbalanced_rnaonly_growth_umap_by_time.py",
+    "sha256_original": "a9956bb025a6ad023b852b3c10bb80d1946e931fee5b02555fb7d95268588b5d",
+    "role": "entrypoint",
+    "dependencies": []
+  },
+  {
+    "path": "comparison/pancreas/plot_pancreas_coati_celltype_transition_matrix.py",
+    "source": "scripts/plot_pancreas_coati_celltype_transition_matrix.py",
+    "sha256_original": "b34d0572879d4a8abf81f45e50baea1a93f67f753ad26905c68344373180d788",
+    "role": "entrypoint",
+    "dependencies": []
+  },
+  {
+    "path": "comparison/pancreas/plot_pancreas_six_method_forward_stay_ambiguous_table.py",
+    "source": "scripts/plot_pancreas_six_method_forward_stay_ambiguous_table.py",
+    "sha256_original": "7d0ea81f40ce027946ff27ae438522f24721c2541d88d6ec645a2bc3d805ffa3",
+    "role": "entrypoint",
+    "dependencies": [
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/pancreas/plot_pancreas_edge_node_atac_summary_table.py",
+    "source": "scripts/plot_pancreas_edge_node_atac_summary_table.py",
+    "sha256_original": "366bb91e014d6e3abb46d9fc36c194ab530c94540ca4278b186e404acb5949fd",
+    "role": "entrypoint",
+    "dependencies": [
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/pancreas/plot_pancreas_six_method_full_composition_residual_heatmap.py",
+    "source": "scripts/plot_pancreas_six_method_full_composition_residual_heatmap.py",
+    "sha256_original": "22e55c5cd3247ef6fc6779bbad705ec26e222486907158fdd679f420a6f22e8f",
+    "role": "entrypoint",
+    "dependencies": []
+  },
+  {
+    "path": "comparison/pancreas/plot_pancreas_mass_stress_evidence.py",
+    "source": "scripts/plot_pancreas_mass_stress_evidence.py",
+    "sha256_original": "67169575a833c44b917ce0db2f40a6fb6d93a1394848f2b8c7bc9f3e1984fc78",
+    "role": "entrypoint",
+    "dependencies": []
+  },
+  {
+    "path": "comparison/pancreas/plot_pancreas_strict_loo_dual_umap.py",
+    "source": "scripts/plot_pancreas_strict_loo_dual_umap.py",
+    "sha256_original": "41c2875835e2012a024cfcde41835018554f9facb582942b9a8b4083114e0156",
+    "role": "entrypoint",
+    "dependencies": [
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/pancreas/plot_pancreas_strict_loo_six_metrics_revised.py",
+    "source": "scripts/plot_pancreas_strict_loo_six_metrics_revised.py",
+    "sha256_original": "1f97f3319b368d465d3a94dec1c146c6dbd51ac71e12aa99584aa543538f8d8a",
+    "role": "entrypoint",
+    "dependencies": [
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/pancreas/plot_pancreas_strict_loo_celltype_composition.py",
+    "source": "scripts/plot_pancreas_strict_loo_celltype_composition.py",
+    "sha256_original": "b6172b160a5e44dd4c1d4b211421e08029b082053eddaa41071c35ea4a5341a3",
+    "role": "entrypoint",
+    "dependencies": [
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/pancreas/plot_pancreas_six_method_full_e145_e155_lineage_composition.py",
+    "source": "scripts/plot_pancreas_six_method_full_e145_e155_lineage_composition.py",
+    "sha256_original": "cd4d402394d0f06a2bea180ab48c34f2d25250d0aca93cd09fcf2bd89e309d0c",
+    "role": "entrypoint",
+    "dependencies": [
+      "comparison/pancreas/plot_pancreas_coati_celltype_transition_matrix.py",
+      "comparison/pancreas/plot_pancreas_six_method_full_e155_e165_lineage_composition.py",
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/pancreas/plot_pancreas_four_method_loo_transition_matrices.py",
+    "source": "scripts/plot_pancreas_four_method_loo_transition_matrices.py",
+    "sha256_original": "9a2c69e28e81dc0bd483129d01152b4f396047b816c845a5ed9685bad9528a4c",
+    "role": "entrypoint",
+    "dependencies": [
+      "comparison/pancreas/plot_pancreas_coati_celltype_transition_matrix.py"
+    ]
+  },
+  {
+    "path": "comparison/pancreas/plot_pancreas_relative_total_mass.py",
+    "source": "scripts/plot_pancreas_relative_total_mass.py",
+    "sha256_original": "d546232509ea3aed737e00e13cef4cdb7671dbe3f60eeb555fd8043989c21f8d",
+    "role": "entrypoint",
+    "dependencies": []
+  },
+  {
+    "path": "comparison/pancreas/plot_pancreas_coati_cytobridge_mean_growth_by_stage.py",
+    "source": "scripts/plot_pancreas_coati_cytobridge_mean_growth_by_stage.py",
+    "sha256_original": "bfce6930e6ba5049849af4256852ae53aeb63c332655c295426becc836957ec2",
+    "role": "entrypoint",
+    "dependencies": []
+  },
+  {
+    "path": "comparison/pancreas/plot_pancreas_atac_module_profile_weighted_summary.py",
+    "source": "scripts/plot_pancreas_atac_module_profile_weighted_summary.py",
+    "sha256_original": "f78e526ed063e43089f1b391dd2924d687483256e178453168f3dea9c0dfa0d7",
+    "role": "entrypoint",
+    "dependencies": [
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/pancreas/plot_pancreas_full_top_two_targets_appendix.py",
+    "source": "scripts/plot_pancreas_full_top_two_targets_appendix.py",
+    "sha256_original": "959d01680b27c197270faab0b171e876c2bb5d9b786956926d4d2fc51a7e7437",
+    "role": "entrypoint",
+    "dependencies": [
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/palate/plot_palate_external_peak_contrast_table.py",
+    "source": "scripts/plot_palate_external_peak_contrast_table.py",
+    "sha256_original": "2dd10c677452d1165d216489001538381348f6bc05d5557f3ebbb6089f5cf2fd",
+    "role": "entrypoint",
+    "dependencies": [
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/palate/evaluate_palate_loo_external_epigenetic_evidence.py",
+    "source": "scripts/evaluate_palate_loo_external_epigenetic_evidence.py",
+    "sha256_original": "ff3bee219be2b4036343935205e3c41eb18f326109cacbca843da4f20ec0edea",
+    "role": "entrypoint",
+    "dependencies": [
+      "comparison/palate/analyze_palate_shox2_1nn_regulation.py",
+      "comparison/palate/evaluate_palate_loo_same_space.py",
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/palate/plot_palate_atac_substate_f1_rare_no_rna_only.py",
+    "source": "scripts/plot_palate_atac_substate_f1_rare_no_rna_only.py",
+    "sha256_original": "5b1ed3bc9c27e1127f2e01fd7c1158e8d0d9f40b9c609ac9efb2146dc1b7898d",
+    "role": "entrypoint",
+    "dependencies": [
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/palate/evaluate_palate_loo_atac_regulatory_substates.py",
+    "source": "scripts/evaluate_palate_loo_atac_regulatory_substates.py",
+    "sha256_original": "433cd017158780388b9077fd39bfeee458630730d193a957499d5f7683319551",
+    "role": "entrypoint",
+    "dependencies": [
+      "comparison/palate/analyze_palate_loo_atac_unique_support_biology.py",
+      "comparison/palate/evaluate_palate_loo_same_space.py",
+      "comparison/palate/plot_palate_strict_loo_six_metrics_revised.py",
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/palate/analyze_palate_full_atac_sync_ablation.py",
+    "source": "scripts/analyze_palate_full_atac_sync_ablation.py",
+    "sha256_original": "60da6139cd67a54218d9fd0457e38621643f10d053262299771f6c045bfa2eb6",
+    "role": "entrypoint",
+    "dependencies": [
+      "comparison/palate/analyze_palate_shox2_1nn_regulation.py",
+      "comparison/palate/evaluate_palate_loo_same_space.py",
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/palate/plot_palate_peak_gene_max_correlation_supported_pairs.py",
+    "source": "scripts/plot_palate_peak_gene_max_correlation_supported_pairs.py",
+    "sha256_original": "16bc7c65b95a3f5ef0c562aa63ed9e5bb328a771265f6192b758241c8993cd5f",
+    "role": "entrypoint",
+    "dependencies": []
+  },
+  {
+    "path": "comparison/palate/plot_palate_coati_b_supplementary_pairs_2x3.py",
+    "source": "scripts/plot_palate_coati_b_supplementary_pairs_2x3.py",
+    "sha256_original": "6fa331106fe524b8d5817e14de251c237932caf0ab26b85b6821f11d63ee1019",
+    "role": "entrypoint",
+    "dependencies": [
+      "comparison/palate/plot_palate_peak_gene_supplementary_pairs_a4.py"
+    ]
+  },
+  {
+    "path": "comparison/palate/plot_palate_strict_loo_six_metrics_revised.py",
+    "source": "scripts/plot_palate_strict_loo_six_metrics_revised.py",
+    "sha256_original": "507e07c2bcdd611eab47822ab226b80c4e713cc33cd4c33187105b21bed78f0d",
+    "role": "entrypoint",
+    "dependencies": [
+      "comparison/gastrulation/evaluate_gastrulation_paired_knn_atac.py",
+      "comparison/palate/evaluate_palate_loo_same_space.py",
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/palate/plot_palate_strict_loo_dual_umap.py",
+    "source": "scripts/plot_palate_strict_loo_dual_umap.py",
+    "sha256_original": "dedfbd2230876c0fd4de532f42b386fcf3490c28cc1938e276af2f5d30b7bff5",
+    "role": "entrypoint",
+    "dependencies": [
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/palate/plot_palate_loo_celltype_composition.py",
+    "source": "scripts/plot_palate_loo_celltype_composition.py",
+    "sha256_original": "e9d8c616a908194b5b86154fb8444611a71f18e5bc26c889a1d7aaa489cb8c74",
+    "role": "entrypoint",
+    "dependencies": [
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/palate/evaluate_palate_full_external_epigenetic_evidence.py",
+    "source": "scripts/evaluate_palate_full_external_epigenetic_evidence.py",
+    "sha256_original": "eaeec3a2dafc48d64bd054f89d5d32c55f771bfbab707528619502743263310a",
+    "role": "entrypoint",
+    "dependencies": [
+      "comparison/palate/analyze_palate_cnc_rna_atac_fate_concordance.py",
+      "comparison/palate/analyze_palate_shox2_1nn_regulation.py",
+      "comparison/palate/evaluate_palate_loo_external_epigenetic_evidence.py",
+      "comparison/palate/evaluate_palate_loo_same_space.py",
+      "comparison/palate/recalculate_palate_loo_trajectorynet_from_base.py",
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/human_cerebral/plot_human_cerebral_source_line_w2_combined_10pt.py",
+    "source": "scripts/plot_human_cerebral_source_line_w2_combined_10pt.py",
+    "sha256_original": "74ee037b133fe55dd310d9c202b9a4bfbcf292a486e0f52a26b9685ccfb09d63",
+    "role": "entrypoint",
+    "dependencies": [
+      "comparison/human_cerebral/plot_human_cerebral_publication_redraw_10pt.py"
+    ]
+  },
+  {
+    "path": "comparison/human_cerebral/plot_human_cerebral_growth_publication_redraw_10pt.py",
+    "source": "scripts/plot_human_cerebral_growth_publication_redraw_10pt.py",
+    "sha256_original": "3d4d4b8a7985854d3a9c1029fd34ff0738e396653366f60d9fef697d5a431888",
+    "role": "entrypoint",
+    "dependencies": []
+  },
+  {
+    "path": "comparison/human_cerebral/plot_human_cerebral_publication_redraw_10pt.py",
+    "source": "scripts/plot_human_cerebral_publication_redraw_10pt.py",
+    "sha256_original": "f6e904b71feff6423ea057c8ce41d4c6fd9a1d36f274d65ef3fd004e93cb573b",
+    "role": "entrypoint",
+    "dependencies": [
+      "comparison/human_cerebral/analyze_human_cerebral_common_t_atac_recovery_by_time.py",
+      "comparison/human_cerebral/analyze_human_cerebral_original_atac_w2_current.py",
+      "comparison/human_cerebral/plot_human_cerebral_gli3_8peak_source_line_numeric_table.py",
+      "comparison/human_cerebral/plot_human_cerebral_raw_cell_rna_w2_all_methods_by_time.py",
+      "comparison/human_cerebral/plot_human_cerebral_source_line_w2_grouped_dots.py",
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/human_cerebral/plot_human_cerebral_programme_mass_heatmap_cy0p5.py",
+    "source": "scripts/plot_human_cerebral_programme_mass_heatmap_cy0p5.py",
+    "sha256_original": "6cb4072a546661c4bda0bc073f7ce6cb5d04038a8ee168b933112daf3737e9b1",
+    "role": "entrypoint",
+    "dependencies": [
+      "comparison/human_cerebral/analyze_human_cerebral_growth_genes_7time.py",
+      "comparison/human_cerebral/plot_human_cerebral_growth_publication_redraw_10pt.py"
+    ]
+  },
+  {
+    "path": "comparison/human_cerebral/plot_human_cerebral_compact_main_lag_v3.py",
+    "source": "scripts/plot_human_cerebral_compact_main_lag_v3.py",
+    "sha256_original": "092fa4da39ac1c8bb11376b780f9783e37f214b645e2a3205c5644047dd8da9d",
+    "role": "entrypoint",
+    "dependencies": []
+  },
+  {
+    "path": "comparison/human_cerebral/plot_human_cerebral_three_w2_vertical_a4.py",
+    "source": "scripts/plot_human_cerebral_three_w2_vertical_a4.py",
+    "sha256_original": "cfa8b8dca178419a411aa797e84fb058613eeac22c63d1dcc085ac23499f5066",
+    "role": "entrypoint",
+    "dependencies": [
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/human_cerebral/plot_human_cerebral_original_metacell_umap_compact_10pt.py",
+    "source": "scripts/plot_human_cerebral_original_metacell_umap_compact_10pt.py",
+    "sha256_original": "47488b9763b2a7f8c810bf784446fb996a4b64ece5ce69159d476c73a3917391",
+    "role": "entrypoint",
+    "dependencies": [
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/multi_dataset/plot_coati_transport_by_cy_four_datasets.py",
+    "source": "scripts/plot_coati_transport_by_cy_four_datasets.py",
+    "sha256_original": "a9f1951d1f03190ab1e99e8ce7f881692afe0d10a2e8bf08daa15de23a9aa80e",
+    "role": "entrypoint",
+    "dependencies": [
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/multi_dataset/plot_combined_synchronization_ablation.py",
+    "source": "scripts/plot_combined_synchronization_ablation.py",
+    "sha256_original": "6a8648483971bcc524d677cc5817690c5b9a4d863e9eff6f654fc3551c255733",
+    "role": "entrypoint",
+    "dependencies": [
+      "comparison/human_cerebral/evaluate_human_cerebral_balanced_cy_sweep_all_time.py",
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/gastrulation/plot_gastrulation_rna_atac_celltype_reference.py",
+    "source": "scripts/plot_gastrulation_rna_atac_celltype_reference.py",
+    "sha256_original": "f31ffa051bf1d5bba5899436f7aa4872dcbe402c8afcaa3b1d11894c51acf7b2",
+    "role": "entrypoint",
+    "dependencies": [
+      "comparison/gastrulation/evaluate_gastrulation_full_cmcc.py",
+      "comparison/gastrulation/plot_gastrulation_coati_dual_umap_flow.py",
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/gastrulation/plot_gastrulation_t_celltype_auroc_dotplot.py",
+    "source": "scripts/plot_gastrulation_t_celltype_auroc_dotplot.py",
+    "sha256_original": "bbc0a99c3297f09c86e04203a18b090fdecd4dfa16f4d312bbdb3dd7c5dbd221",
+    "role": "entrypoint",
+    "dependencies": [
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/pancreas/plot_pancreas_t_mapping_horizontal_and_umap.py",
+    "source": "scripts/plot_pancreas_t_mapping_horizontal_and_umap.py",
+    "sha256_original": "4c8e28bc1747a2c10c7f23f84e0722d42d8a11fb093241b2b2ddd122aaec619d",
+    "role": "entrypoint",
+    "dependencies": [
+      "comparison/pancreas/analyze_pancreas_t_celltype_auroc.py",
+      "comparison/pancreas/plot_pancreas_coati_celltype_transition_matrix.py",
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/palate/plot_palate_rna_atac_celltype_reference.py",
+    "source": "scripts/plot_palate_rna_atac_celltype_reference.py",
+    "sha256_original": "c8225b500e115d93420aa2b0a3c681804c38fa2ff3fb5edbf2587dab72914de0",
+    "role": "entrypoint",
+    "dependencies": [
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/palate/analyze_palate_t_celltype_auroc.py",
+    "source": "scripts/analyze_palate_t_celltype_auroc.py",
+    "sha256_original": "c1e5bb72850b9c03afa380720daabe00edb9013c8370be68fca185b6f3c1bbaa",
+    "role": "entrypoint",
+    "dependencies": []
+  },
+  {
+    "path": "comparison/human_cerebral/plot_human_cerebral_rna_atac_t_reference.py",
+    "source": "scripts/plot_human_cerebral_rna_atac_t_reference.py",
+    "sha256_original": "746a7814d62d0d80785bffb9e8741a7e0cb2c482155c5224f552ad83ace10535",
+    "role": "entrypoint",
+    "dependencies": [
+      "comparison/human_cerebral/plot_human_cerebral_original_metacell_umaps.py",
+      "comparison/palate/plot_palate_rna_atac_celltype_reference.py",
+      "comparison/human_cerebral/prepare_human_cerebral_original_atac_lsi_umap.py"
+    ]
+  },
+  {
+    "path": "comparison/human_cerebral/analyze_human_cerebral_t_celltype_source_auroc.py",
+    "source": "scripts/analyze_human_cerebral_t_celltype_source_auroc.py",
+    "sha256_original": "fca818a33db81e5ff4ba68e522f910d438a0c0b33906680e18382230872ebbff",
+    "role": "entrypoint",
+    "dependencies": [
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/gastrulation/plot_jsm2026_gastrulation_followup_landscape.py",
+    "source": "scripts/plot_jsm2026_gastrulation_followup_landscape.py",
+    "sha256_original": "c204cdc7d50e33116e6268b7032fd2731a863394e0a89077deda3d9efea70dc7",
+    "role": "entrypoint",
+    "dependencies": [
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "common/plot_trajectorynet_loss.py",
+    "source": "scripts/plot_trajectorynet_loss.py",
+    "sha256_original": "7e53874625e856ee50ffce893faa5238bbfcc6c2d8427e7933a67a6e19fe5f44",
+    "role": "dependency",
+    "dependencies": []
+  },
+  {
+    "path": "model/TrajectoryNet/prepare_synthetic_trajectorynet_reversed_input.py",
+    "source": "scripts/prepare_synthetic_trajectorynet_reversed_input.py",
+    "sha256_original": "876f3a3a3df77126d28a76233c7c201cf613c77f46ddb0059f97c92f2649f96f",
+    "role": "dependency",
+    "dependencies": []
+  },
+  {
+    "path": "common/prepare_loo_time1_inputs.py",
+    "source": "scripts/prepare_loo_time1_inputs.py",
+    "sha256_original": "3d828aa6f6259ee9c243573ecf5e24d15a2c1a559f231d62e0bb09dd09b7b04a",
+    "role": "dependency",
+    "dependencies": []
+  },
+  {
+    "path": "common/prepare_loo_inputs.py",
+    "source": "scripts/prepare_loo_inputs.py",
+    "sha256_original": "63bcc06470549f3cf6f093405a8ba8bd72023e315e2efc4e56caa0b81bf59df9",
+    "role": "dependency",
+    "dependencies": [
+      "common/prepare_loo_time1_inputs.py"
+    ]
+  },
+  {
+    "path": "model/TrajectoryNet/prepare_palate_trajectorynet_reversed_input.py",
+    "source": "scripts/prepare_palate_trajectorynet_reversed_input.py",
+    "sha256_original": "50b12460dfeeaa815cd64a1c05b26a119738de335e143895ce60cf963e2149a5",
+    "role": "dependency",
+    "dependencies": []
+  },
+  {
+    "path": "model/TrajectoryNet/prepare_trajectorynet_moscot_loo_time1_reversed_input.py",
+    "source": "scripts/prepare_trajectorynet_moscot_loo_time1_reversed_input.py",
+    "sha256_original": "b91f2effec3b5951e8018797f32820511b64e6c7aea39a40a10fd717757754d8",
+    "role": "dependency",
+    "dependencies": []
+  },
+  {
+    "path": "model/TrajectoryNet/check_human_cerebral_7time_trajectorynet_mioflow_setup.py",
+    "source": "scripts/check_human_cerebral_7time_trajectorynet_mioflow_setup.py",
+    "sha256_original": "b905c7748f252157eeecf56669b1acd2be4c6189e1d9336e888c8d3670c466d7",
+    "role": "dependency",
+    "dependencies": []
+  },
+  {
+    "path": "model/TrajectoryNet/prepare_human_cerebral_7time_trajectorynet_forward_input.py",
+    "source": "scripts/prepare_human_cerebral_7time_trajectorynet_forward_input.py",
+    "sha256_original": "f9bf5c061b3bd55e39f7b4dc4048798ab4f9a43aa55c738af67f5f4b1cb59878",
+    "role": "dependency",
+    "dependencies": []
+  },
+  {
+    "path": "model/TrajectoryNet/check_human_cerebral_7time_trajectorynet_mioflow_loo_setup.py",
+    "source": "scripts/check_human_cerebral_7time_trajectorynet_mioflow_loo_setup.py",
+    "sha256_original": "9e51c03f5d7157d6dd103b32e43d27060f87cb1bcd9c217bdf600781d80dd86a",
+    "role": "dependency",
+    "dependencies": []
+  },
+  {
+    "path": "model/TrajectoryNet/prepare_human_cerebral_7time_trajectorynet_mioflow_loo_inputs.py",
+    "source": "scripts/prepare_human_cerebral_7time_trajectorynet_mioflow_loo_inputs.py",
+    "sha256_original": "fbc056e050d274537edfc585acfc83a736d803bf7726c8f2f7d9924de20c45ae",
+    "role": "dependency",
+    "dependencies": []
+  },
+  {
+    "path": "comparison/scmultisim/analyze_cytobridge_synthetic.py",
+    "source": "scripts/analyze_cytobridge_synthetic.py",
+    "sha256_original": "5788b634171992bc5c95faf9075fbc5eabe2d831d4d11cf2f97ea1e2798d0d76",
+    "role": "dependency",
+    "dependencies": []
+  },
+  {
+    "path": "common/evaluate_terminal_push.py",
+    "source": "scripts/evaluate_terminal_push.py",
+    "sha256_original": "d944b4eff3067a9b15dc0672ab4f095dc7f89634b1066e7a12d6ddf57593ecb9",
+    "role": "dependency",
+    "dependencies": []
+  },
+  {
+    "path": "common/transform_joblib_umap.py",
+    "source": "scripts/transform_joblib_umap.py",
+    "sha256_original": "f62fa337630775ee4b22ded65b11481a29da295a083c15d808fda714411236bb",
+    "role": "dependency",
+    "dependencies": []
+  },
+  {
+    "path": "model/MIOFlow/check_mioflow_moscot_shared_full_gaga10.py",
+    "source": "scripts/check_mioflow_moscot_shared_full_gaga10.py",
+    "sha256_original": "21c5daa5a657aac4a3394a7930ebb50835fd992a1b5d7a4d189626e8589184ee",
+    "role": "dependency",
+    "dependencies": []
+  },
+  {
+    "path": "model/MIOFlow/run_mioflow_pca_gaga10_n1024_20000.sh",
+    "source": "scripts/run_mioflow_pca_gaga10_n1024_20000.sh",
+    "sha256_original": "dcd9e09b07d805637b7da55cfa726c187c556ef15f1f6a5230e459c6a4b7a770",
+    "role": "dependency",
+    "dependencies": [
+      "model/MIOFlow/train_mioflow_10000.py"
+    ]
+  },
+  {
+    "path": "comparison/human_cerebral/annotate_mioflow_human_cerebral_7time_time_axis.py",
+    "source": "scripts/annotate_mioflow_human_cerebral_7time_time_axis.py",
+    "sha256_original": "cb8cfb94e3c18dc1743800f857b73ac8662c1b927c6a6a568c36740a8baba327",
+    "role": "dependency",
+    "dependencies": []
+  },
+  {
+    "path": "model/TrajectoryNet/prepare_human_cerebral_7time_trajectorynet_mioflow_inputs.py",
+    "source": "scripts/prepare_human_cerebral_7time_trajectorynet_mioflow_inputs.py",
+    "sha256_original": "5db5b0bf6a9c82891c321bccc83014ec216988bbf34863de02f30792dfeda07e",
+    "role": "dependency",
+    "dependencies": []
+  },
+  {
+    "path": "common/evaluate_mioflow_terminal_push.py",
+    "source": "scripts/evaluate_mioflow_terminal_push.py",
+    "sha256_original": "6943a0da73357fd9f361df56101a63602d13591fdff2580f6e6e97d9088ae580",
+    "role": "dependency",
+    "dependencies": []
+  },
+  {
+    "path": "comparison/scmultisim/cache_cytobridge_synthetic_observed_times.py",
+    "source": "scripts/cache_cytobridge_synthetic_observed_times.py",
+    "sha256_original": "2ffe41db23de04abefc4cc8a727654aaf940c171048496f03f6768c4d4f31dd9",
+    "role": "dependency",
+    "dependencies": [
+      "comparison/scmultisim/analyze_cytobridge_synthetic.py",
+      "comparison/scmultisim/compare_synthetic_methods_coati_protocol.py"
+    ]
+  },
+  {
+    "path": "common/plot_coati_cytobridge_observed_time_umap.py",
+    "source": "scripts/plot_coati_cytobridge_observed_time_umap.py",
+    "sha256_original": "579c939f740d872427b1f483632ed28f26188dd7e523e100e04f38aa56f07b8a",
+    "role": "dependency",
+    "dependencies": [
+      "comparison/scmultisim/analyze_cytobridge_synthetic.py",
+      "common/transform_joblib_umap.py"
+    ]
+  },
+  {
+    "path": "comparison/scmultisim/plot_cytobridge_synthetic_convergence.py",
+    "source": "scripts/plot_cytobridge_synthetic_convergence.py",
+    "sha256_original": "d65055dfd7de50195871426f5bc071b77b2f1e2c58c5eb4e884f04e20ba14272",
+    "role": "dependency",
+    "dependencies": []
+  },
+  {
+    "path": "model/CytoBridge/prepare_synthetic_cytobridge_inputs.py",
+    "source": "scripts/prepare_synthetic_cytobridge_inputs.py",
+    "sha256_original": "49f02138c502cbbe3bfdaa91b032c573d0a6ad654006b581414e1f1cbbe1c278",
+    "role": "dependency",
+    "dependencies": []
+  },
+  {
+    "path": "model/CytoBridge/run_cytobridge_20000.sh",
+    "source": "scripts/run_cytobridge_20000.sh",
+    "sha256_original": "74781608573fce0a5cbcb5d5233ac6a3e41fdcdadfdfa26212a263ef977fad26",
+    "role": "dependency",
+    "dependencies": [
+      "model/CytoBridge/train_cytobridge_20000.py"
+    ]
+  },
+  {
+    "path": "model/CytoBridge/run_cytobridge_loo_time1_20000.sh",
+    "source": "scripts/run_cytobridge_loo_time1_20000.sh",
+    "sha256_original": "37ad3bac24b4ed03699155de048287a939b3589cafdf3938e2c198c75a44431b",
+    "role": "dependency",
+    "dependencies": [
+      "common/prepare_loo_time1_inputs.py",
+      "model/CytoBridge/run_cytobridge_20000.sh"
+    ]
+  },
+  {
+    "path": "model/CytoBridge/check_human_cerebral_7time_cytobridge_setup.py",
+    "source": "scripts/check_human_cerebral_7time_cytobridge_setup.py",
+    "sha256_original": "4c2c998578c9585130f67f4113c7e8a57ab6b9a11b1bff092c9fe4ff8c8d1393",
+    "role": "dependency",
+    "dependencies": []
+  },
+  {
+    "path": "model/CytoBridge/prepare_human_cerebral_7time_cytobridge_inputs.py",
+    "source": "scripts/prepare_human_cerebral_7time_cytobridge_inputs.py",
+    "sha256_original": "abeffd64634aad9790acd8418ea1e5674a96e363faa0012b4aec9c2959747bd6",
+    "role": "dependency",
+    "dependencies": []
+  },
+  {
+    "path": "model/CytoBridge/check_human_cerebral_7time_cytobridge_loo_setup.py",
+    "source": "scripts/check_human_cerebral_7time_cytobridge_loo_setup.py",
+    "sha256_original": "9a9913bbd713d317b6d628c193be49d043e96f0d46369f4143e3cb323db95628",
+    "role": "dependency",
+    "dependencies": []
+  },
+  {
+    "path": "model/CytoBridge/prepare_human_cerebral_7time_cytobridge_loo_inputs.py",
+    "source": "scripts/prepare_human_cerebral_7time_cytobridge_loo_inputs.py",
+    "sha256_original": "19605a9491bd5f1e0d4b29910fa6ff97050e5836e58e616ea88bfdc4c7402fd9",
+    "role": "dependency",
+    "dependencies": []
+  },
+  {
+    "path": "model/TIGON/tigon_official_ae_common.py",
+    "source": "scripts/tigon_official_ae_common.py",
+    "sha256_original": "1963c7335dc0302b28fc9a6a92bcd292c58a7bcd71a7a7a8c4678d584188d7e4",
+    "role": "dependency",
+    "dependencies": []
+  },
+  {
+    "path": "model/TIGON/prepare_tigon_gastrulation_official_ae_common_pca_bridge.py",
+    "source": "scripts/prepare_tigon_gastrulation_official_ae_common_pca_bridge.py",
+    "sha256_original": "468005e4e23b20181fc55d5b3807a9960d286b7c4cf6ca297c999236e4b13f19",
+    "role": "dependency",
+    "dependencies": [
+      "model/TIGON/prepare_tigon_official_ae_embedding.py"
+    ]
+  },
+  {
+    "path": "model/TIGON/prepare_tigon_official_ae_embedding.py",
+    "source": "scripts/prepare_tigon_official_ae_embedding.py",
+    "sha256_original": "17b20235a1f48aed4fc521b972bd24e4ad4c3b7b456691403d7470aa1e0b18e6",
+    "role": "dependency",
+    "dependencies": [
+      "model/TIGON/tigon_official_ae_common.py"
+    ]
+  },
+  {
+    "path": "model/TIGON/evaluate_tigon_selected_checkpoint.py",
+    "source": "scripts/evaluate_tigon_selected_checkpoint.py",
+    "sha256_original": "0b7daf4b7c2d163e8189619ed61935f8891a6fb196014fc4ea2d37f369f691c7",
+    "role": "dependency",
+    "dependencies": [
+      "model/TIGON/run_tigon_frozen_official_ae_embedding.py",
+      "model/TIGON/tigon_checkpoint_evaluation_common.py"
+    ]
+  },
+  {
+    "path": "model/TIGON/evaluate_tigon_selected_checkpoint_common_pca.py",
+    "source": "scripts/evaluate_tigon_selected_checkpoint_common_pca.py",
+    "sha256_original": "aca973bf118e8cb29954869afe1845690f956c45ef49aaa4779b16a6d35d697a",
+    "role": "dependency",
+    "dependencies": [
+      "model/TIGON/tigon_checkpoint_evaluation_common.py",
+      "model/TIGON/tigon_official_ae_common.py"
+    ]
+  },
+  {
+    "path": "model/TIGON/select_tigon_observed_checkpoint.py",
+    "source": "scripts/select_tigon_observed_checkpoint.py",
+    "sha256_original": "d384f8004e1b1b2a682cf92dbce7e798adc489631d42bceef2b881ffa2240549",
+    "role": "dependency",
+    "dependencies": [
+      "model/TIGON/run_tigon_frozen_official_ae_embedding.py",
+      "model/TIGON/tigon_checkpoint_evaluation_common.py"
+    ]
+  },
+  {
+    "path": "model/TIGON/check_tigon_moscot_upstream_public_exact_ae5.py",
+    "source": "scripts/check_tigon_moscot_upstream_public_exact_ae5.py",
+    "sha256_original": "9a0d4d68156adf770832005f8014666ebaea49f1f3e356caa12b5dc67ad84980",
+    "role": "dependency",
+    "dependencies": []
+  },
+  {
+    "path": "model/TIGON/prepare_tigon_moscot_official_ae_common_pca_bridge.py",
+    "source": "scripts/prepare_tigon_moscot_official_ae_common_pca_bridge.py",
+    "sha256_original": "7a327e0241925f766cfcbb4c58f0fb054e5172ed299ae95da4712a53bad78aa1",
+    "role": "dependency",
+    "dependencies": [
+      "model/TIGON/prepare_tigon_official_ae_embedding.py"
+    ]
+  },
+  {
+    "path": "model/TIGON/run_tigon_official_ae10_dopri5_exact_n1024_20000.sh",
+    "source": "scripts/run_tigon_official_ae10_dopri5_exact_n1024_20000.sh",
+    "sha256_original": "833397e30501dc2147bcdb36ad32afba404c8a01c64df782713d842328a44f80",
+    "role": "dependency",
+    "dependencies": [
+      "model/TIGON/prepare_tigon_official_ae10_background.sh",
+      "model/TIGON/run_tigon_frozen_official_ae_embedding.py"
+    ]
+  },
+  {
+    "path": "comparison/scmultisim/analyze_tigon_synthetic.py",
+    "source": "scripts/analyze_tigon_synthetic.py",
+    "sha256_original": "d8a4982e2e01b2bc182abc152fe38b31f68c43149aacdfb8a176e0fc985af567",
+    "role": "dependency",
+    "dependencies": [
+      "comparison/scmultisim/analyze_cytobridge_synthetic.py",
+      "model/MIOFlow/analyze_mioflow_synthetic.py",
+      "model/TIGON/evaluate_tigon_gastrulation_normalized.py",
+      "common/transform_joblib_umap.py"
+    ]
+  },
+  {
+    "path": "common/trainfbench_plot_style.py",
+    "source": "scripts/trainfbench_plot_style.py",
+    "sha256_original": "63fae7877e35113abaff601afc8b048750bf427765bd22e415f4210e30abcc9e",
+    "role": "dependency",
+    "dependencies": []
+  },
+  {
+    "path": "comparison/gastrulation/evaluate_gastrulation_full_cmcc.py",
+    "source": "scripts/evaluate_gastrulation_full_cmcc.py",
+    "sha256_original": "010fbc1e4f4f7dc2faaea8b2b1580098abef39e0400c7b48050eaf35eca3fae9",
+    "role": "dependency",
+    "dependencies": [
+      "comparison/gastrulation/evaluate_gastrulation_flow_methods_normalized.py",
+      "common/evaluate_terminal_push.py",
+      "model/TIGON/evaluate_tigon_gastrulation_normalized.py"
+    ]
+  },
+  {
+    "path": "comparison/gastrulation/compare_gastrulation_unbalanced_nmp_decomposition.py",
+    "source": "scripts/compare_gastrulation_unbalanced_nmp_decomposition.py",
+    "sha256_original": "19c2f094f35d1bdfe0ad2e2af7c314b0148c20372663f7a1ecc71e842969fa7e",
+    "role": "dependency",
+    "dependencies": [
+      "comparison/gastrulation/decompose_gastrulation_nmp_mass_change.py",
+      "comparison/gastrulation/evaluate_gastrulation_flow_methods_normalized.py",
+      "model/TIGON/evaluate_tigon_gastrulation_normalized.py"
+    ]
+  },
+  {
+    "path": "comparison/gastrulation/decompose_gastrulation_nmp_mass_change.py",
+    "source": "scripts/decompose_gastrulation_nmp_mass_change.py",
+    "sha256_original": "c1cf0386499408add1095a06f95a817e30ba260808ac77ede71096c2bcd2ab11",
+    "role": "dependency",
+    "dependencies": []
+  },
+  {
+    "path": "comparison/gastrulation/evaluate_gastrulation_flow_methods_normalized.py",
+    "source": "scripts/evaluate_gastrulation_flow_methods_normalized.py",
+    "sha256_original": "505b0c47a47c181ac7581fa47df35fa9b240cd98fcf8d5a1e7bfec10f1543217",
+    "role": "dependency",
+    "dependencies": [
+      "common/evaluate_mioflow_terminal_push.py"
+    ]
+  },
+  {
+    "path": "model/TIGON/tigon_checkpoint_evaluation_common.py",
+    "source": "scripts/tigon_checkpoint_evaluation_common.py",
+    "sha256_original": "f35015e6a64d8465e4da60bd9e07e770c6cac72fc550ef68855f591d70b8efea",
+    "role": "dependency",
+    "dependencies": [
+      "model/TIGON/tigon_official_ae_common.py"
+    ]
+  },
+  {
+    "path": "comparison/gastrulation/analyze_gastrulation_loo_regulatory_edges.py",
+    "source": "scripts/analyze_gastrulation_loo_regulatory_edges.py",
+    "sha256_original": "db05f6f43e2a6a77fb28a19b9d34778d18593443bcb40af7445162fe655ba929",
+    "role": "dependency",
+    "dependencies": [
+      "comparison/gastrulation/evaluate_gastrulation_full_cmcc.py"
+    ]
+  },
+  {
+    "path": "comparison/gastrulation/evaluate_gastrulation_loo_time1_paired_1nn_atac.py",
+    "source": "scripts/evaluate_gastrulation_loo_time1_paired_1nn_atac.py",
+    "sha256_original": "fb78e627ab053bd5784f48136c8de49d2adcc34fc37b5bd4a29b19c72e229c2a",
+    "role": "dependency",
+    "dependencies": [
+      "comparison/gastrulation/evaluate_gastrulation_flow_methods_normalized.py",
+      "comparison/gastrulation/evaluate_gastrulation_full_cmcc.py",
+      "comparison/gastrulation/evaluate_gastrulation_paired_knn_atac.py",
+      "common/evaluate_terminal_push.py",
+      "model/TIGON/evaluate_tigon_gastrulation_normalized.py"
+    ]
+  },
+  {
+    "path": "comparison/gastrulation/evaluate_gastrulation_full_train_fit_six_metrics.py",
+    "source": "scripts/evaluate_gastrulation_full_train_fit_six_metrics.py",
+    "sha256_original": "e402a976a7086c7903d7bdb4fb8f083fcdf2a327916cd491bf5f6a65c9724fd8",
+    "role": "dependency",
+    "dependencies": [
+      "comparison/gastrulation/evaluate_gastrulation_full_cmcc.py",
+      "comparison/gastrulation/evaluate_gastrulation_loo_time1_paired_1nn_atac.py",
+      "comparison/gastrulation/evaluate_gastrulation_loo_time1_shared_t_atac.py",
+      "common/evaluate_terminal_push.py",
+      "comparison/gastrulation/plot_gastrulation_loo_terminal_floor_six_metrics.py",
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/gastrulation/analyze_gastrulation_loo_source_lineage_fidelity.py",
+    "source": "scripts/analyze_gastrulation_loo_source_lineage_fidelity.py",
+    "sha256_original": "b5aa8e1f2d033bd25d3119f5f60933f419c1eb3d5c34b163e89f84b64056d6cc",
+    "role": "dependency",
+    "dependencies": [
+      "comparison/gastrulation/evaluate_gastrulation_full_cmcc.py",
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/gastrulation/analyze_gastrulation_strict_loo1_all_source_offlineage.py",
+    "source": "scripts/analyze_gastrulation_strict_loo1_all_source_offlineage.py",
+    "sha256_original": "47fc72d5719a48cab6a77a1087d3d258c544eaf9743b27bfed4c53009dc9b8a5",
+    "role": "dependency",
+    "dependencies": [
+      "comparison/gastrulation/analyze_gastrulation_loo_source_lineage_fidelity.py",
+      "comparison/gastrulation/analyze_gastrulation_strict_loo1_rostral_endpoint_offlineage.py",
+      "comparison/gastrulation/evaluate_gastrulation_full_cmcc.py",
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/gastrulation/analyze_gastrulation_strict_loo1_rostral_endpoint_offlineage.py",
+    "source": "scripts/analyze_gastrulation_strict_loo1_rostral_endpoint_offlineage.py",
+    "sha256_original": "38e8b4d531bff50ee24b92f12e08d191ed73637ec0f1214965e8ac50a92d328f",
+    "role": "dependency",
+    "dependencies": [
+      "comparison/gastrulation/analyze_gastrulation_loo_rostral_gross_cross_lineage.py",
+      "comparison/gastrulation/evaluate_gastrulation_full_cmcc.py"
+    ]
+  },
+  {
+    "path": "comparison/gastrulation/analyze_gastrulation_strict_loo2_all_source_offlineage.py",
+    "source": "scripts/analyze_gastrulation_strict_loo2_all_source_offlineage.py",
+    "sha256_original": "436806ae267faa29027d996d8d745756f7660d253231c06b65a922d135a5a713",
+    "role": "dependency",
+    "dependencies": [
+      "comparison/gastrulation/analyze_gastrulation_loo_source_lineage_fidelity.py",
+      "comparison/gastrulation/analyze_gastrulation_strict_loo1_all_source_offlineage.py",
+      "comparison/gastrulation/evaluate_gastrulation_full_cmcc.py",
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/gastrulation/analyze_gastrulation_loo_rostral_gross_cross_lineage.py",
+    "source": "scripts/analyze_gastrulation_loo_rostral_gross_cross_lineage.py",
+    "sha256_original": "96c7b8f1cf12958434d7013b0d9b9dfeed453855924576ef8b975d55593f55e3",
+    "role": "dependency",
+    "dependencies": [
+      "comparison/gastrulation/evaluate_gastrulation_flow_methods_normalized.py",
+      "comparison/gastrulation/evaluate_gastrulation_full_cmcc.py",
+      "common/evaluate_terminal_push.py"
+    ]
+  },
+  {
+    "path": "comparison/gastrulation/plot_gastrulation_rostral_tss_ablation.py",
+    "source": "scripts/plot_gastrulation_rostral_tss_ablation.py",
+    "sha256_original": "9d3b23350975093bd6e56095a61b616310e6c043f52a911e70c082b214afbaee",
+    "role": "dependency",
+    "dependencies": [
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/pancreas/plot_pancreas_six_method_full_e155_e165_lineage_composition.py",
+    "source": "scripts/plot_pancreas_six_method_full_e155_e165_lineage_composition.py",
+    "sha256_original": "4bb3d13d882c854bbaee8434209c45f4ffb1eb14350d03edaf4e545a795dcc17",
+    "role": "dependency",
+    "dependencies": [
+      "comparison/pancreas/plot_pancreas_coati_celltype_transition_matrix.py",
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/palate/analyze_palate_shox2_1nn_regulation.py",
+    "source": "scripts/analyze_palate_shox2_1nn_regulation.py",
+    "sha256_original": "6fb09b690627a3d92ca40bd0e72d3e51e8698a0d1fb72c02cb1bd700f2b652a0",
+    "role": "dependency",
+    "dependencies": [
+      "comparison/palate/evaluate_palate_loo_same_space.py"
+    ]
+  },
+  {
+    "path": "comparison/palate/evaluate_palate_loo_same_space.py",
+    "source": "scripts/evaluate_palate_loo_same_space.py",
+    "sha256_original": "1d79de3dbc193a8adee02dbaee3699dc84b9aa01c052ace4ebbc2d45cc769c1b",
+    "role": "dependency",
+    "dependencies": [
+      "common/evaluate_terminal_push.py"
+    ]
+  },
+  {
+    "path": "comparison/palate/analyze_palate_loo_atac_unique_support_biology.py",
+    "source": "scripts/analyze_palate_loo_atac_unique_support_biology.py",
+    "sha256_original": "361223d40e241bd725da975f6058f9d2d78bfba23e3cfe5a112f73aa6e621744",
+    "role": "dependency",
+    "dependencies": [
+      "comparison/palate/analyze_palate_shox2_1nn_regulation.py",
+      "comparison/palate/analyze_palate_usot_fixed_lineage_multiome.py",
+      "comparison/palate/evaluate_palate_loo_same_space.py",
+      "comparison/palate/plot_palate_strict_loo_six_metrics_revised.py",
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/palate/plot_palate_peak_gene_supplementary_pairs_a4.py",
+    "source": "scripts/plot_palate_peak_gene_supplementary_pairs_a4.py",
+    "sha256_original": "71f79b2bd519a2158c7a70052d76315eadc259256663360591ac4cb6f58a695c",
+    "role": "dependency",
+    "dependencies": []
+  },
+  {
+    "path": "comparison/gastrulation/evaluate_gastrulation_paired_knn_atac.py",
+    "source": "scripts/evaluate_gastrulation_paired_knn_atac.py",
+    "sha256_original": "19adbd718ec5779229b626f1b951f5cb4825748a9d068cf9dff3f55f92ba4f42",
+    "role": "dependency",
+    "dependencies": [
+      "comparison/gastrulation/evaluate_gastrulation_flow_methods_normalized.py",
+      "comparison/gastrulation/evaluate_gastrulation_full_cmcc.py"
+    ]
+  },
+  {
+    "path": "comparison/palate/analyze_palate_cnc_rna_atac_fate_concordance.py",
+    "source": "scripts/analyze_palate_cnc_rna_atac_fate_concordance.py",
+    "sha256_original": "9ac6a7d1fa073277b14d6f6e8602aff4e00c863d0a0ccb98e15edbfffff6b63b",
+    "role": "dependency",
+    "dependencies": [
+      "comparison/gastrulation/evaluate_gastrulation_flow_methods_normalized.py",
+      "comparison/palate/evaluate_palate_loo_same_space.py",
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/palate/recalculate_palate_loo_trajectorynet_from_base.py",
+    "source": "scripts/recalculate_palate_loo_trajectorynet_from_base.py",
+    "sha256_original": "04e93e434905c96711fe46e442b32ca5e917cde16666037a383d3cd35e0f7eb2",
+    "role": "dependency",
+    "dependencies": [
+      "comparison/palate/evaluate_palate_loo_same_space.py",
+      "common/evaluate_terminal_push.py"
+    ]
+  },
+  {
+    "path": "comparison/human_cerebral/analyze_human_cerebral_common_t_atac_recovery_by_time.py",
+    "source": "scripts/analyze_human_cerebral_common_t_atac_recovery_by_time.py",
+    "sha256_original": "c1314a093f8eb0d4f4093044c87040f3bd2a57c8b02822c9455b71c0f108b3d1",
+    "role": "dependency",
+    "dependencies": [
+      "comparison/human_cerebral/analyze_human_cerebral_source_line_group_w2.py",
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/human_cerebral/analyze_human_cerebral_original_atac_w2_current.py",
+    "source": "scripts/analyze_human_cerebral_original_atac_w2_current.py",
+    "sha256_original": "57f91e254c5549d210800332b5acbdcf2c11af11f82f3b65eaad444cdfc44769",
+    "role": "dependency",
+    "dependencies": [
+      "comparison/human_cerebral/analyze_human_cerebral_common_t_atac_recovery_by_time.py",
+      "comparison/human_cerebral/analyze_human_cerebral_source_line_group_w2.py",
+      "comparison/human_cerebral/plot_human_cerebral_raw_cell_rna_w2_all_methods_by_time.py",
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/human_cerebral/plot_human_cerebral_gli3_8peak_source_line_numeric_table.py",
+    "source": "scripts/plot_human_cerebral_gli3_8peak_source_line_numeric_table.py",
+    "sha256_original": "716f6f637f64c70b7d6f65f89d29b20046549d4820d61f2402805247083d74ad",
+    "role": "dependency",
+    "dependencies": [
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/human_cerebral/plot_human_cerebral_raw_cell_rna_w2_all_methods_by_time.py",
+    "source": "scripts/plot_human_cerebral_raw_cell_rna_w2_all_methods_by_time.py",
+    "sha256_original": "16205fcd03ee28d1ebccd7a251db735f29017cf14816e234f0ed6cf10ae0fcbb",
+    "role": "dependency",
+    "dependencies": [
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/human_cerebral/plot_human_cerebral_source_line_w2_grouped_dots.py",
+    "source": "scripts/plot_human_cerebral_source_line_w2_grouped_dots.py",
+    "sha256_original": "adf1c54668bb80f68ec9d1b650a58c4c29f8fe14e0505b64d5bb52cf675cd8f4",
+    "role": "dependency",
+    "dependencies": [
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/human_cerebral/analyze_human_cerebral_growth_genes_7time.py",
+    "source": "scripts/analyze_human_cerebral_growth_genes_7time.py",
+    "sha256_original": "d24afe8efad69c8a9e66316f2d1510a3f21a4fb9ebd16bff58a43df63c0625e6",
+    "role": "dependency",
+    "dependencies": []
+  },
+  {
+    "path": "comparison/human_cerebral/evaluate_human_cerebral_balanced_cy_sweep_all_time.py",
+    "source": "scripts/evaluate_human_cerebral_balanced_cy_sweep_all_time.py",
+    "sha256_original": "8260a4fb52d15e0415ccdf0adc2abff298450d55d28badd80e6c2c61d63f9d15",
+    "role": "dependency",
+    "dependencies": []
+  },
+  {
+    "path": "comparison/pancreas/analyze_pancreas_t_celltype_auroc.py",
+    "source": "scripts/analyze_pancreas_t_celltype_auroc.py",
+    "sha256_original": "fe0c6b772457e5bd3cd76c171e321cad2de3d3ddfa3528297b4a6e04178efe46",
+    "role": "dependency",
+    "dependencies": [
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/human_cerebral/plot_human_cerebral_original_metacell_umaps.py",
+    "source": "scripts/plot_human_cerebral_original_metacell_umaps.py",
+    "sha256_original": "066803b8c3b1380040f2e30fff17673a58bc38bf7c49823f8c6644c1221b3c69",
+    "role": "dependency",
+    "dependencies": [
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/human_cerebral/prepare_human_cerebral_original_atac_lsi_umap.py",
+    "source": "scripts/prepare_human_cerebral_original_atac_lsi_umap.py",
+    "sha256_original": "d3c3ab5788ac7120b4766cef8391a1f3cb9bd97385b435c07f501b60132cd7f6",
+    "role": "dependency",
+    "dependencies": [
+      "comparison/human_cerebral/extract_human_cerebral_original_atac.R",
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/scmultisim/compare_synthetic_methods_coati_protocol.py",
+    "source": "scripts/compare_synthetic_methods_coati_protocol.py",
+    "sha256_original": "94481d5b21386fe726e5f3340c0e92fa0658361f7e31a1ad7afd72eb90783db2",
+    "role": "dependency",
+    "dependencies": [
+      "comparison/scmultisim/analyze_cytobridge_synthetic.py",
+      "model/MIOFlow/analyze_mioflow_synthetic.py",
+      "comparison/scmultisim/analyze_tigon_synthetic.py",
+      "comparison/scmultisim/analyze_trajectorynet_synthetic.py",
+      "common/evaluate_terminal_push.py",
+      "model/TIGON/evaluate_tigon_gastrulation_normalized.py",
+      "common/transform_joblib_umap.py"
+    ]
+  },
+  {
+    "path": "model/TIGON/prepare_tigon_official_ae10_background.sh",
+    "source": "scripts/prepare_tigon_official_ae10_background.sh",
+    "sha256_original": "3ef6cf534057d134cf5ccf30300832b16621ff6edab117cb6b916bad1affe264",
+    "role": "dependency",
+    "dependencies": [
+      "model/TIGON/prepare_tigon_official_ae10.sh"
+    ]
+  },
+  {
+    "path": "model/TIGON/evaluate_tigon_gastrulation_normalized.py",
+    "source": "scripts/evaluate_tigon_gastrulation_normalized.py",
+    "sha256_original": "6e786f80c00df85c1326db167cd3bc5b023b52d0b1a73fd1b79b9a77c2df3af6",
+    "role": "dependency",
+    "dependencies": []
+  },
+  {
+    "path": "comparison/gastrulation/evaluate_gastrulation_loo_time1_shared_t_atac.py",
+    "source": "scripts/evaluate_gastrulation_loo_time1_shared_t_atac.py",
+    "sha256_original": "a2d915ccf2b4e1bbcc1f23fe0dc679f8ea12ce8ceefea4ed0e990f975df82f29",
+    "role": "dependency",
+    "dependencies": [
+      "comparison/gastrulation/evaluate_gastrulation_full_cmcc.py",
+      "comparison/gastrulation/evaluate_gastrulation_loo_time1_paired_1nn_atac.py",
+      "comparison/gastrulation/evaluate_gastrulation_paired_knn_atac.py"
+    ]
+  },
+  {
+    "path": "comparison/gastrulation/plot_gastrulation_loo_terminal_floor_six_metrics.py",
+    "source": "scripts/plot_gastrulation_loo_terminal_floor_six_metrics.py",
+    "sha256_original": "26d74db75ae2e42fa38713e5e324d122a7abd2942a67c091cd17abe34729364d",
+    "role": "dependency",
+    "dependencies": [
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/palate/analyze_palate_usot_fixed_lineage_multiome.py",
+    "source": "scripts/analyze_palate_usot_fixed_lineage_multiome.py",
+    "sha256_original": "cf0f2c51fca670c41c9e069ea20ffc1a24d69bb3d4ee516353141abede4683c2",
+    "role": "dependency",
+    "dependencies": [
+      "comparison/gastrulation/analyze_gastrulation_preserved_growth_genes.py"
+    ]
+  },
+  {
+    "path": "comparison/human_cerebral/analyze_human_cerebral_source_line_group_w2.py",
+    "source": "scripts/analyze_human_cerebral_source_line_group_w2.py",
+    "sha256_original": "3a93d4e7e93494c024f1ecc3de1f60d775846f56f37a5a5d9e29342831b57fde",
+    "role": "dependency",
+    "dependencies": [
+      "comparison/human_cerebral/analyze_human_cerebral_peak_gene_max_correlation.py"
+    ]
+  },
+  {
+    "path": "comparison/human_cerebral/extract_human_cerebral_original_atac.R",
+    "source": "scripts/extract_human_cerebral_original_atac.R",
+    "sha256_original": "1c4ada9fedc448f303414bfb10a67e40ee75bd9d4538a7ca433c95584cf32ece",
+    "role": "dependency",
+    "dependencies": []
+  },
+  {
+    "path": "comparison/scmultisim/analyze_trajectorynet_synthetic.py",
+    "source": "scripts/analyze_trajectorynet_synthetic.py",
+    "sha256_original": "8081e8ddd4fc82fb89458527a7758933dcda9aa15a887a4b2215267ea98b24fd",
+    "role": "dependency",
+    "dependencies": [
+      "comparison/scmultisim/analyze_cytobridge_synthetic.py",
+      "common/evaluate_terminal_push.py",
+      "common/transform_joblib_umap.py"
+    ]
+  },
+  {
+    "path": "model/TIGON/prepare_tigon_official_ae10.sh",
+    "source": "scripts/prepare_tigon_official_ae10.sh",
+    "sha256_original": "8a68208150350679ec4d908f45392a4149a39b73cfdb5178de68ddbf9146c52a",
+    "role": "dependency",
+    "dependencies": [
+      "model/TIGON/prepare_tigon_official_ae_embedding.py"
+    ]
+  },
+  {
+    "path": "comparison/gastrulation/analyze_gastrulation_preserved_growth_genes.py",
+    "source": "scripts/analyze_gastrulation_preserved_growth_genes.py",
+    "sha256_original": "45f6d0d311fb47956f2685748bf8928ba4df9127cbc03e17ad9b243dcaaced1b",
+    "role": "dependency",
+    "dependencies": []
+  },
+  {
+    "path": "comparison/human_cerebral/analyze_human_cerebral_peak_gene_max_correlation.py",
+    "source": "scripts/analyze_human_cerebral_peak_gene_max_correlation.py",
+    "sha256_original": "a4fb9221aaf7d93b934a1e7da54aa9fb50bb0797afd7e2161cd1d211477505db",
+    "role": "dependency",
+    "dependencies": []
+  },
+  {
+    "path": "comparison/gastrulation/recompute_gastrulation_trajectorynet_native_base_cohorts.py",
+    "source": "scripts/recompute_gastrulation_trajectorynet_native_base_cohorts.py",
+    "sha256_original": "d60a966dd5f8dc3ebbcf06d878ce1517d208b926616c880f1e1bb45530e4e617",
+    "role": "entrypoint",
+    "dependencies": [
+      "comparison/gastrulation/evaluate_gastrulation_full_cmcc.py",
+      "common/evaluate_terminal_push.py",
+      "common/trainfbench_plot_style.py"
+    ]
+  },
+  {
+    "path": "comparison/gastrulation/plot_gastrulation_coati_temporal_pair_shuffle_validation.py",
+    "source": "scripts/plot_gastrulation_coati_temporal_pair_shuffle_validation.py",
+    "sha256_original": "c8c296bdde9213c70a65dae37321af45fbb083dc5e0ab7ac657b790948885ced",
+    "role": "entrypoint",
+    "dependencies": []
+  },
+  {
+    "path": "comparison/gaussian_bump/plot_gauss_summary.py",
+    "source": "TraInf/GaussToy/plot_gauss_summary.py",
+    "sha256_original": "93101f024831fa8d66f5984aea96eb646a2e1da3226be1a4f40cc8d497bb8489",
+    "role": "entrypoint",
+    "dependencies": []
+  },
+  {
+    "path": "comparison/bifurcation/plot_toysplit_summary.py",
+    "source": "TraInf/ToySplit/plot_toysplit_summary.py",
+    "sha256_original": "b6068e2f13c7d3e0a54d214da7e88c65fbf91faa97d4a6aff9575340b58b95bb",
+    "role": "entrypoint",
+    "dependencies": []
+  },
+  {
+    "path": "comparison/scmultisim/plot_synthetic_overview.py",
+    "source": "TraInf/Synthetic/plot_synthetic_overview.py",
+    "sha256_original": "064d92abfa0b697922a757ade6051f7d6e190bb68acf748a0ace0f08fba6e4cd",
+    "role": "entrypoint",
+    "dependencies": []
+  },
+  {
+    "path": "comparison/scmultisim/make_ever_branch_jump_table.py",
+    "source": "TraInf/Synthetic/UnbalancedSyncSweep/make_ever_branch_jump_table.py",
+    "sha256_original": "2fb629ab383221eabf7155f63d997faf2cb8626b3efb8bd39a181adb37f96f29",
+    "role": "entrypoint",
+    "dependencies": []
+  },
+  {
+    "path": "comparison/scmultisim/make_combined_distribution_grid.py",
+    "source": "TraInf/Synthetic/UnbalancedSyncSweep/make_combined_distribution_grid.py",
+    "sha256_original": "693ff971d75f97fff56f79c84f62e6858ca20d16584818de4208f7d2a648e458",
+    "role": "entrypoint",
+    "dependencies": []
+  },
+  {
+    "path": "comparison/scmultisim/make_t_architecture_distribution_grid.py",
+    "source": "TraInf/Synthetic/UnbalancedSyncSweep/make_t_architecture_distribution_grid.py",
+    "sha256_original": "7046cff69021c568bbcfc2f9433032bc1ca41dc4befaa31107cf8f567dec0f04",
+    "role": "entrypoint",
+    "dependencies": []
+  },
+  {
+    "path": "comparison/scmultisim/make_observed_time_correctness_table.py",
+    "source": "TraInf/Synthetic/UnbalancedSyncSweep/make_observed_time_correctness_table.py",
+    "sha256_original": "eaa138357894f747510e1604fad15aecd2e02e81f80baaf1d072337c975987ad",
+    "role": "entrypoint",
+    "dependencies": []
+  },
+  {
+    "path": "model/TIGON/run_tigon_moscot_ae.py",
+    "source": "external/TIGON/run_tigon_moscot_ae.py",
+    "sha256_original": "4424b2ee5d26e2321afec71dfce6d454a0d9739ffaed53a4bc9d3b7dc8bb4455",
+    "role": "implementation",
+    "dependencies": []
+  },
+  {
+    "path": "comparison/gastrulation/plot_gastrulation_unbalanced_dual_umap_flow.py",
+    "source": "scripts/plot_gastrulation_unbalanced_dual_umap_flow.py",
+    "sha256_original": "84953264d85ccabc6435b20d1810497ee3f8b88b4d6c8e6b63f7c11d7cbf16ce",
+    "role": "entrypoint",
+    "dependencies": []
+  },
+  {
+    "path": "comparison/gastrulation/plot_gastrulation_unbalanced_growth_distribution.py",
+    "source": "scripts/plot_gastrulation_unbalanced_growth_distribution.py",
+    "sha256_original": "ca2a589f56a7988225181f0c8fa98955638725bec9d7aeb792254cf0142fa316",
+    "role": "entrypoint",
+    "dependencies": []
+  },
+  {
+    "path": "comparison/gastrulation/plot_gastrulation_t_mapping_validation_table.py",
+    "source": "scripts/plot_gastrulation_t_mapping_validation_table.py",
+    "sha256_original": "88853d6f415213a1e27bef4d5f9d53548cf89ecfa464f15dd6f1e5b503c297bf",
+    "role": "entrypoint",
+    "dependencies": []
+  },
+  {
+    "path": "comparison/gastrulation/plot_gastrulation_full_train_coati_cy_tables.py",
+    "source": "scripts/plot_gastrulation_full_train_coati_cy_tables.py",
+    "sha256_original": "8cb5cad075699a1b44e606d71110a32d88a33cab3d6ac474ca95b5e1ebcbdd99",
+    "role": "entrypoint",
+    "dependencies": []
+  },
+  {
+    "path": "comparison/human_cerebral/plot_human_cerebral_three_stage_mass_story_compact.py",
+    "source": "scripts/plot_human_cerebral_three_stage_mass_story_compact.py",
+    "sha256_original": "c01114a72fa22cee307af45d324955c4c5e108e3c12f9b4b2e9c4aedb2ed304b",
+    "role": "entrypoint",
+    "dependencies": []
+  },
+  {
+    "path": "comparison/human_cerebral/plot_human_cerebral_three_stage_mass_story.py",
+    "source": "scripts/plot_human_cerebral_three_stage_mass_story.py",
+    "sha256_original": "4a43305c6bf49d407de332123b7b04f4109bc9a00b4a11351240e7575bc16910",
+    "role": "entrypoint",
+    "dependencies": []
+  }
+]

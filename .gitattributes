@@ -1,0 +1,3 @@
+# Preserve exact upstream patch context and license notices.
+*.patch -whitespace
+**/UPSTREAM_LICENSE.txt -whitespace

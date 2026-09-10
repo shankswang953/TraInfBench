@@ -1,0 +1,21 @@
+# Scientific dependencies tested in the original Python 3.10 environment.
+# Install the four method packages separately; see model/*/README.md.
+numpy==2.2.6
+pandas
+scipy
+torch==2.9.1
+anndata==0.11.4
+scanpy==1.11.5
+scikit-learn
+matplotlib
+POT==0.9.6.post1
+geomloss==0.2.6
+torchdiffeq==0.2.5
+torchsde
+phate
+umap-learn
+joblib
+h5py
+PyYAML
+pdfplumber
+pypdf

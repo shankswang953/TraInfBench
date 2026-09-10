@@ -1,0 +1,318 @@
+diff --git a/TrajectoryNet/lib/layers/odefunc.py b/TrajectoryNet/lib/layers/odefunc.py
+index ba00010..330f4cd 100644
+--- a/TrajectoryNet/lib/layers/odefunc.py
++++ b/TrajectoryNet/lib/layers/odefunc.py
+@@ -287,7 +287,7 @@ class ODEfunc(nn.Module):
+         batchsize = y.shape[0]
+ 
+         # Sample and fix the noise.
+-        if self._e is None:
++        if self._e is None or self._e.shape != y.shape:
+             if self.rademacher:
+                 self._e = sample_rademacher_like(y)
+             else:
+diff --git a/TrajectoryNet/lib/utils.py b/TrajectoryNet/lib/utils.py
+index 6868487..62e1900 100644
+--- a/TrajectoryNet/lib/utils.py
++++ b/TrajectoryNet/lib/utils.py
+@@ -26,13 +26,15 @@ def get_logger(logpath, filepath, package_files=[], displaying=True, saving=True
+         console_handler.setLevel(level)
+         logger.addHandler(console_handler)
+     logger.info(filepath)
+-    with open(filepath, "r") as f:
+-        logger.info(f.read())
+-
+-    for f in package_files:
+-        logger.info(f)
+-        with open(f, "r") as package_f:
+-            logger.info(package_f.read())
++    log_source = os.environ.get("TRAJECTORYNET_LOG_SOURCE", "0") == "1"
++    if log_source:
++        with open(filepath, "r") as f:
++            logger.info(f.read())
++
++        for f in package_files:
++            logger.info(f)
++            with open(f, "r") as package_f:
++                logger.info(package_f.read())
+ 
+     return logger
+ 
+diff --git a/TrajectoryNet/main.py b/TrajectoryNet/main.py
+index 70c01cf..4724879 100644
+--- a/TrajectoryNet/main.py
++++ b/TrajectoryNet/main.py
+@@ -4,6 +4,7 @@ Learns ODE from scrna data
+ 
+ """
+ import os
++import csv
+ import matplotlib
+ import matplotlib.pyplot as plt
+ import numpy as np
+@@ -35,6 +36,7 @@ from TrajectoryNet.train_misc import (
+     create_regularization_fns,
+     get_regularization,
+     append_regularization_to_log,
++    INV_REGULARIZATION_FNS,
+     build_model_tabular,
+ )
+ 
+@@ -44,6 +46,89 @@ from TrajectoryNet.parse import parser
+ matplotlib.use("Agg")
+ 
+ 
++def _format_timepoint(tp):
++    if isinstance(tp, (int, np.integer)):
++        return str(int(tp))
++    if isinstance(tp, (float, np.floating)) and float(tp).is_integer():
++        return str(int(tp))
++    return str(tp).replace("-", "m").replace(".", "p")
++
++
++def _nll_term_name(tp):
++    return "nll_time_" + _format_timepoint(tp)
++
++
++def _to_float(value):
++    if isinstance(value, torch.Tensor):
++        return float(value.detach().cpu().item())
++    return float(value)
++
++
++def _loss_log_fields(args, regularization_fns):
++    fields = [
++        "iter",
++        "total_loss",
++        "loss_before_cnf_regularization",
++        "nll_loss",
++        "nll_unweighted_mean",
++    ]
++    fields.extend(_nll_term_name(tp) for tp in args.timepoints)
++
++    if args.interp_reg:
++        fields.extend(["interp_reg_loss", "interp_reg_weighted"])
++    if args.vecint:
++        fields.extend(["vecint_loss", "vecint_weighted"])
++    if args.top_k_reg > 0:
++        fields.extend(["top_k_density_loss", "top_k_density_weighted"])
++
++    fields.append("cnf_regularization_total")
++    for reg_fn in regularization_fns:
++        name = INV_REGULARIZATION_FNS[reg_fn]
++        fields.extend([f"cnf_reg_{name}", f"cnf_reg_{name}_weighted"])
++    return fields
++
++
++def _append_loss_terms(save_dir, filename, fields, itr, terms):
++    utils.makedirs(save_dir)
++    path = os.path.join(save_dir, filename)
++    write_header = not os.path.exists(path)
++    row = {field: "" for field in fields}
++    row["iter"] = itr
++    for key, value in terms.items():
++        if key in row:
++            row[key] = _to_float(value)
++    with open(path, "a", newline="") as handle:
++        writer = csv.DictWriter(handle, fieldnames=fields)
++        if write_header:
++            writer.writeheader()
++        writer.writerow(row)
++
++
++def _add_cnf_regularization_terms(
++    loss, terms, model, regularization_coeffs, regularization_fns, include_in_total=True
++):
++    terms["loss_before_cnf_regularization"] = loss
++    terms["cnf_regularization_total"] = loss.new_tensor(0.0)
++    reg_states = ()
++    if len(regularization_coeffs) > 0:
++        reg_states = get_regularization(model, regularization_coeffs)
++        reg_loss = loss.new_tensor(0.0)
++        for reg_state, coeff, reg_fn in zip(
++            reg_states, regularization_coeffs, regularization_fns
++        ):
++            name = INV_REGULARIZATION_FNS[reg_fn]
++            weighted = reg_state * coeff
++            terms[f"cnf_reg_{name}"] = reg_state
++            terms[f"cnf_reg_{name}_weighted"] = weighted
++            if coeff != 0:
++                reg_loss = reg_loss + weighted
++        terms["cnf_regularization_total"] = reg_loss
++        if include_in_total:
++            loss = loss + reg_loss
++    terms["total_loss"] = loss
++    return loss, terms, reg_states
++
++
+ def get_transforms(device, args, model, integration_times):
+     """
+     Given a list of integration points,
+@@ -99,7 +184,7 @@ def compute_loss(device, args, model, growth_model, logger, full_data):
+     deltas = []
+     zs = []
+     z = None
+-    interp_loss = 0.0
++    interp_loss = None
+     for i, (itp, tp) in enumerate(zip(args.int_tps[::-1], args.timepoints[::-1])):
+         # tp counts down from last
+         integration_times = torch.tensor([itp - args.time_scale, itp])
+@@ -131,7 +216,10 @@ def compute_loss(device, args, model, growth_model, logger, full_data):
+             int_x = model(x, integration_times=int_t)
+             int_x = int_x.detach()
+             actual_int_x = x * (1 - t) + z * t
+-            interp_loss += F.mse_loss(int_x, actual_int_x)
++            if interp_loss is None:
++                interp_loss = F.mse_loss(int_x, actual_int_x)
++            else:
++                interp_loss = interp_loss + F.mse_loss(int_x, actual_int_x)
+     if args.interp_reg:
+         print("interp_loss", interp_loss)
+ 
+@@ -156,10 +244,15 @@ def compute_loss(device, args, model, growth_model, logger, full_data):
+         logps.append(logpx[: -args.batch_size])
+         losses.append(-torch.mean(logpx[-args.batch_size :]))
+     losses = torch.stack(losses)
++    terms = {}
++    for tp, loss_value in zip(args.timepoints, losses):
++        terms[_nll_term_name(tp)] = loss_value
++    terms["nll_unweighted_mean"] = torch.mean(losses)
+     weights = torch.ones_like(losses).to(logpx)
+     if args.leaveout_timepoint >= 0:
+         weights[args.leaveout_timepoint] = 0
+     losses = torch.mean(losses * weights)
++    terms["nll_loss"] = losses
+ 
+     # Direction regularization
+     if args.vecint:
+@@ -179,7 +272,10 @@ def compute_loss(device, args, model, growth_model, logger, full_data):
+             else:
+                 similarity_loss -= torch.mean(F.cosine_similarity(direction, v))
+         logger.info(similarity_loss)
+-        losses += similarity_loss * args.vecint
++        vecint_weighted = similarity_loss * args.vecint
++        terms["vecint_loss"] = similarity_loss
++        terms["vecint_weighted"] = vecint_weighted
++        losses += vecint_weighted
+ 
+     # Density regularization
+     if args.top_k_reg > 0:
+@@ -213,9 +309,15 @@ def compute_loss(device, args, model, growth_model, logger, full_data):
+         values[values < 0] = 0
+         density_loss = torch.mean(values)
+         print("Density Loss", density_loss.item())
+-        losses += density_loss * args.top_k_reg
+-    losses += interp_loss
+-    return losses
++        density_weighted = density_loss * args.top_k_reg
++        terms["top_k_density_loss"] = density_loss
++        terms["top_k_density_weighted"] = density_weighted
++        losses += density_weighted
++    if args.interp_reg:
++        terms["interp_reg_loss"] = interp_loss
++        terms["interp_reg_weighted"] = interp_loss
++        losses += interp_loss
++    return losses, terms
+ 
+ 
+ def train(
+@@ -240,6 +342,7 @@ def train(
+     )
+ 
+     best_loss = float("inf")
++    loss_log_fields = _loss_log_fields(args, regularization_fns)
+     if args.use_growth:
+         growth_model.eval()
+     end = time.time()
+@@ -251,18 +354,13 @@ def train(
+         if args.spectral_norm:
+             spectral_norm_power_iteration(model, 1)
+ 
+-        loss = compute_loss(device, args, model, growth_model, logger, full_data)
++        loss, loss_terms = compute_loss(
++            device, args, model, growth_model, logger, full_data
++        )
++        loss, loss_terms, reg_states = _add_cnf_regularization_terms(
++            loss, loss_terms, model, regularization_coeffs, regularization_fns
++        )
+         loss_meter.update(loss.item())
+-
+-        if len(regularization_coeffs) > 0:
+-            # Only regularize on the last timepoint
+-            reg_states = get_regularization(model, regularization_coeffs)
+-            reg_loss = sum(
+-                reg_state * coeff
+-                for reg_state, coeff in zip(reg_states, regularization_coeffs)
+-                if coeff != 0
+-            )
+-            loss = loss + reg_loss
+         total_time = count_total_time(model)
+         nfe_forward = count_nfe(model)
+ 
+@@ -297,11 +395,24 @@ def train(
+                 log_message, regularization_fns, reg_states
+             )
+         logger.info(log_message)
++        _append_loss_terms(
++            args.save, "loss_terms_train.csv", loss_log_fields, itr, loss_terms
++        )
+ 
+         if itr % args.val_freq == 0 or itr == args.niters:
+             with torch.no_grad():
+                 train_eval(
+-                    device, args, model, growth_model, itr, best_loss, logger, full_data
++                    device,
++                    args,
++                    model,
++                    growth_model,
++                    itr,
++                    best_loss,
++                    logger,
++                    full_data,
++                    regularization_coeffs,
++                    regularization_fns,
++                    loss_log_fields,
+                 )
+ 
+         if itr % args.viz_freq == 0:
+@@ -325,15 +436,38 @@ def train(
+     logger.info("Training has finished.")
+ 
+ 
+-def train_eval(device, args, model, growth_model, itr, best_loss, logger, full_data):
++def train_eval(
++    device,
++    args,
++    model,
++    growth_model,
++    itr,
++    best_loss,
++    logger,
++    full_data,
++    regularization_coeffs,
++    regularization_fns,
++    loss_log_fields,
++):
+     model.eval()
+-    test_loss = compute_loss(device, args, model, growth_model, logger, full_data)
++    test_loss, test_terms = compute_loss(device, args, model, growth_model, logger, full_data)
++    test_loss, test_terms, _ = _add_cnf_regularization_terms(
++        test_loss,
++        test_terms,
++        model,
++        regularization_coeffs,
++        regularization_fns,
++        include_in_total=False,
++    )
+     test_nfe = count_nfe(model)
+     log_message = "[TEST] Iter {:04d} | Test Loss {:.6f} |" " NFE {:.0f}".format(
+         itr, test_loss, test_nfe
+     )
+     logger.info(log_message)
+     utils.makedirs(args.save)
++    _append_loss_terms(
++        args.save, "loss_terms_eval.csv", loss_log_fields, itr, test_terms
++    )
+     with open(os.path.join(args.save, "train_eval.csv"), "a") as f:
+         import csv
+ 

@@ -1,0 +1,204 @@
+diff --git a/mioflow/mioflow.py b/mioflow/mioflow.py
+index ff8893c..3353aa9 100644
+--- a/mioflow/mioflow.py
++++ b/mioflow/mioflow.py
+@@ -1,4 +1,5 @@
+ import logging
++import csv
+ from pathlib import Path
+ from typing import List, Dict, Tuple, Optional
+ 
+@@ -128,11 +129,35 @@ class MIOFlow:
+         # Growth rate
+         growth_rate_model=None,
+         growth_rate_lr: float = 1e-4,
++        # Logging
++        loss_log_every: int = 10,
++        # Embedding normalization
++        embedding_normalization: str = "identity",
++        embedding_scale: Optional[float] = None,
++        embedding_mean: Optional[np.ndarray] = None,
++        embedding_std: Optional[np.ndarray] = None,
+     ):
+         self.adata = adata
+         self.gaga_autoencoder = gaga_model
+         self.gaga_input_key = gaga_input_key
+         self.obs_time_key = obs_time_key
++        self.embedding_normalization = embedding_normalization.replace("-", "_")
++        self.embedding_scale = embedding_scale
++        if (embedding_mean is None) != (embedding_std is None):
++            raise ValueError(
++                "embedding_mean and embedding_std must either both be provided "
++                "or both be omitted"
++            )
++        self.frozen_embedding_mean = (
++            None
++            if embedding_mean is None
++            else np.asarray(embedding_mean, dtype=np.float64).reshape(-1)
++        )
++        self.frozen_embedding_std = (
++            None
++            if embedding_std is None
++            else np.asarray(embedding_std, dtype=np.float64).reshape(-1)
++        )
+ 
+         # Model config
+         self.hidden_dim = hidden_dim
+@@ -177,6 +202,7 @@ class MIOFlow:
+         # Growth rate
+         self.growth_rate_model = growth_rate_model
+         self.growth_rate_lr = growth_rate_lr
++        self.loss_log_every = loss_log_every
+ 
+         # State
+         self.is_fitted = False
+@@ -239,11 +265,54 @@ class MIOFlow:
+         return embedding, time_labels
+ 
+     def _normalize(self, embedding: np.ndarray) -> np.ndarray:
+-        """Z-normalize embedding, storing mean/std for later denormalization."""
+-        self.mean_vals = embedding.mean(axis=0)
+-        std = embedding.std(axis=0)
+-        self.std_vals = np.where(std == 0, 1.0, std)
+-        return (embedding - self.mean_vals) / self.std_vals
++        """Normalize embedding, storing affine inverse params for trajectories."""
++        dim = embedding.shape[1]
++        mode = self.embedding_normalization
++
++        if mode in {"identity", "none"}:
++            self.mean_vals = np.zeros(dim, dtype=np.float64)
++            self.std_vals = np.ones(dim, dtype=np.float64)
++            return embedding.astype(np.float64, copy=False)
++
++        if mode in {"global_scale", "scale"}:
++            if self.embedding_scale is None:
++                raise ValueError("embedding_scale is required for global_scale normalization")
++            scale = float(self.embedding_scale)
++            if scale <= 0:
++                raise ValueError(f"embedding_scale must be positive, got {scale}")
++            self.mean_vals = np.zeros(dim, dtype=np.float64)
++            self.std_vals = np.full(dim, scale, dtype=np.float64)
++            return embedding.astype(np.float64, copy=False) / scale
++
++        if mode == "zscore":
++            if self.frozen_embedding_mean is None:
++                self.mean_vals = embedding.mean(axis=0)
++                std = embedding.std(axis=0)
++                self.std_vals = np.where(std == 0, 1.0, std)
++            else:
++                if self.frozen_embedding_mean.shape != (dim,):
++                    raise ValueError(
++                        "Frozen embedding mean has shape "
++                        f"{self.frozen_embedding_mean.shape}; expected {(dim,)}"
++                    )
++                if self.frozen_embedding_std.shape != (dim,):
++                    raise ValueError(
++                        "Frozen embedding std has shape "
++                        f"{self.frozen_embedding_std.shape}; expected {(dim,)}"
++                    )
++                if not np.all(np.isfinite(self.frozen_embedding_mean)):
++                    raise ValueError("Frozen embedding mean contains non-finite values")
++                if not np.all(np.isfinite(self.frozen_embedding_std)):
++                    raise ValueError("Frozen embedding std contains non-finite values")
++                if np.any(self.frozen_embedding_std <= 0):
++                    raise ValueError("Frozen embedding std must be strictly positive")
++                self.mean_vals = self.frozen_embedding_mean.copy()
++                self.std_vals = self.frozen_embedding_std.copy()
++            return (embedding - self.mean_vals) / self.std_vals
++
++        raise ValueError(
++            "embedding_normalization must be one of: identity, global_scale, zscore"
++        )
+ 
+     def _prepare_data(self) -> 'TimeSeriesDataset':
+         """Encode, normalize, and package data as a TimeSeriesDataset."""
+@@ -251,6 +320,12 @@ class MIOFlow:
+         self.embedding = embedding # saving the latent space where we ran our model
+         self._time_labels = time_labels  # saving the time_labels
+         normed = self._normalize(embedding)
++        self.normalized_embedding = normed
++        self.logger.info(
++            "Embedding normalization: %s%s",
++            self.embedding_normalization,
++            f" (scale={self.embedding_scale})" if self.embedding_scale is not None else "",
++        )
+         groups = sorted(set(time_labels))
+         time_series_data = [
+             (normed[time_labels == g].astype(np.float32), float(g))
+@@ -297,6 +372,8 @@ class MIOFlow:
+             # Growth rate
+             growth_rate_model=self.growth_rate_model,
+             growth_rate_lr=self.growth_rate_lr,
++            loss_log_path=Path(self.exp_dir) / "losses_live.csv",
++            loss_log_every=self.loss_log_every,
+             **self.scheduler_kwargs,
+         )
+         self.losses = history
+@@ -424,7 +501,9 @@ def train_mioflow(
+     scheduler_t_max: int = None,  # For CosineAnnealingLR, defaults to num_epochs
+     scheduler_min_lr: float = 0.0,  # Minimum learning rate for cosine scheduler
+     growth_rate_model = None,  # Growth rate model
+-    growth_rate_lr: float = 1e-4  # Learning rate for growth rate model
++    growth_rate_lr: float = 1e-4,  # Learning rate for growth rate model
++    loss_log_path: Optional[Path] = None,
++    loss_log_every: int = 10,
+ ) -> Dict:
+     """
+     Train an ODEFunc on a TimeSeriesDataset using global (full-trajectory) training.
+@@ -455,7 +534,16 @@ def train_mioflow(
+         'epoch': [], 'total_loss': [], 'ot_loss': [], 'density_loss': [], 'energy_loss': [],
+     }
+ 
+-    for epoch in tqdm(range(num_epochs), desc='Training (global)'):
++    loss_log_fields = ['epoch', 'total_loss', 'ot_loss', 'density_loss', 'energy_loss']
++    if loss_log_path is not None:
++        loss_log_path = Path(loss_log_path)
++        loss_log_path.parent.mkdir(parents=True, exist_ok=True)
++        with loss_log_path.open('w', newline='') as handle:
++            writer = csv.DictWriter(handle, fieldnames=loss_log_fields)
++            writer.writeheader()
++
++    progress = tqdm(range(num_epochs), desc='Training (global)')
++    for epoch in progress:
+         epoch_losses = {'total': 0.0, 'ot': 0.0, 'density': 0.0, 'energy': 0.0}
+ 
+         num_intervals = 0
+@@ -540,5 +628,37 @@ def train_mioflow(
+         history['density_loss'].append(epoch_losses['density'])
+         history['energy_loss'].append(epoch_losses['energy'])
+ 
+-    return history
++        row = {
++            'epoch': epoch + 1,
++            'total_loss': epoch_losses['total'],
++            'ot_loss': epoch_losses['ot'],
++            'density_loss': epoch_losses['density'],
++            'energy_loss': epoch_losses['energy'],
++        }
++        if loss_log_path is not None:
++            with loss_log_path.open('a', newline='') as handle:
++                writer = csv.DictWriter(handle, fieldnames=loss_log_fields)
++                writer.writerow(row)
++
++        progress.set_postfix(
++            total=f"{epoch_losses['total']:.4g}",
++            ot=f"{epoch_losses['ot']:.4g}",
++            density=f"{epoch_losses['density']:.4g}",
++            energy=f"{epoch_losses['energy']:.4g}",
++        )
++        should_print = (
++            loss_log_every is not None
++            and loss_log_every > 0
++            and ((epoch + 1) % loss_log_every == 0 or epoch == 0 or epoch + 1 == num_epochs)
++        )
++        if should_print:
++            print(
++                f"Epoch {epoch + 1}/{num_epochs} | "
++                f"total_loss={epoch_losses['total']:.8g} | "
++                f"ot_loss={epoch_losses['ot']:.8g} | "
++                f"density_loss={epoch_losses['density']:.8g} | "
++                f"energy_loss={epoch_losses['energy']:.8g}",
++                flush=True,
++            )
+ 
++    return history

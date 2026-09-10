@@ -1,0 +1,18 @@
+{
+  "TrajectoryNet": {
+    "url": "https://github.com/KrishnaswamyLab/TrajectoryNet.git",
+    "commit": "810c89b081f95405bc0ad42bfb3cb41038e13700"
+  },
+  "MIOFlow": {
+    "url": "https://github.com/KrishnaswamyLab/MIOFlow.git",
+    "commit": "ec4b8ba06784aeba0f6e2be6c6204a8e806e1c77"
+  },
+  "CytoBridge": {
+    "url": "https://github.com/zhenyiizhang/CytoBridge.git",
+    "commit": "c0dbeda807a70bb04cd374f9b8d11a15fe5b3d54"
+  },
+  "TIGON_upstream_1ed92cf": {
+    "url": "https://github.com/yutongo/TIGON.git",
+    "commit": "1ed92cfcc250415fc01b4d344a308b0680cc9635"
+  }
+}

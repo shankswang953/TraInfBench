@@ -1,0 +1,42 @@
+diff --git a/CytoBridge/tl/analysis.py b/CytoBridge/tl/analysis.py
+index 25efffb..ba273d4 100644
+--- a/CytoBridge/tl/analysis.py
++++ b/CytoBridge/tl/analysis.py
+@@ -734,7 +734,7 @@ def train_mlp_classifier(
+     optimizer = optim.Adam(model.parameters(), lr=lr)
+     
+     # Train the model
+-    for epoch in range(train_mlp_classifier_epoches):f
++    for epoch in range(train_mlp_classifier_epoches):
+         model.train()
+         X_train.requires_grad_(True)
+         
+diff --git a/CytoBridge/tl/fit.py b/CytoBridge/tl/fit.py
+index 0daa15b..97630dd 100644
+--- a/CytoBridge/tl/fit.py
++++ b/CytoBridge/tl/fit.py
+@@ -89,6 +89,8 @@ def fit(adata: sc.AnnData,
+ 
+     print(f"Model & data saved -> {ckpt_dir}")
+     
+-    trainer.evaluate(adata,data_torch, time_points)  # TODO handle hold-out
++    # External benchmark scripts handle terminal-push evaluation on a shared space.
++    # The built-in full evaluation is memory-heavy for large AnnData objects.
++    # trainer.evaluate(adata,data_torch, time_points)  # TODO handle hold-out
+ 
+-    return adata
+\ No newline at end of file
++    return adata
+diff --git a/CytoBridge/tl/trainer.py b/CytoBridge/tl/trainer.py
+index e61cb20..1a4849c 100644
+--- a/CytoBridge/tl/trainer.py
++++ b/CytoBridge/tl/trainer.py
+@@ -336,7 +336,7 @@ class TrainingPipeline:
+             # Calculate mass loss only if mass component is enabled
+             loss_mass = calc_mass_loss(x1, data_t1, lnw1, relative_mass, global_mass) if self.use_mass else 0.0
+             # Energy loss (average of energy term from ODE step)
+-            loss_energy = e1.mean()
++            loss_energy = e1.sum()
+ 
+             # Combine losses with respective weights
+             loss = (lambda_ot * loss_ot) + (lambda_mass * loss_mass) + (lambda_energy * loss_energy)
