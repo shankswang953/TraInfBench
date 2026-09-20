@@ -1,0 +1,82 @@
+{
+  "records": [
+    {
+      "dataset": "scmultisim",
+      "record_url": "https://zenodo.org/records/22865368",
+      "files": [
+        {
+          "name": "scmultisim_source_tables.zip",
+          "bytes": 47111251,
+          "md5": "2372ee4e50c9999ccd80b508e27e95f6"
+        }
+      ],
+      "verification": "Zenodo MD5 matched local source file"
+    },
+    {
+      "dataset": "palate",
+      "record_url": "https://zenodo.org/records/22865407",
+      "files": [
+        {
+          "name": "rna_dimReduced.h5ad",
+          "bytes": 1275322927,
+          "md5": "7005f22d3a2768ed9201971fb3c6eb07"
+        },
+        {
+          "name": "atac_dimReduced.h5ad",
+          "bytes": 1768947092,
+          "md5": "8e0d8a9906ce42b3f108557eeb7bae4f"
+        },
+        {
+          "name": "gene_activity_filtered.h5ad",
+          "bytes": 867542710,
+          "md5": "7906ea9bcbf16cf2d11238ac1e520f10"
+        },
+        {
+          "name": "atac_peaks.h5ad",
+          "bytes": 921021118,
+          "md5": "3a8149eca8686754b791dfc3c8a49115"
+        }
+      ],
+      "verification": "Zenodo MD5 matched local source file"
+    },
+    {
+      "dataset": "gastrulation",
+      "record_url": "https://zenodo.org/records/22865419",
+      "files": [
+        {
+          "name": "gastrulation_rna.h5ad",
+          "bytes": 3379711704,
+          "md5": "9e88f34e722b0141aad084d0d2d23590"
+        },
+        {
+          "name": "gastrulation_atac_peaks.h5ad",
+          "bytes": 10689353744,
+          "md5": "ae874548c4c7f7ecd3341bcb3e1a98ba"
+        }
+      ],
+      "verification": "Zenodo MD5 matched local source file"
+    },
+    {
+      "dataset": "pancreas",
+      "record_url": "https://zenodo.org/records/22865425",
+      "files": [
+        {
+          "name": "rna_adata.h5ad",
+          "bytes": 11811977052,
+          "md5": "fe79dfe13839a3cc078c5d1c7d83104a"
+        },
+        {
+          "name": "atac_adata.h5ad",
+          "bytes": 13160977092,
+          "md5": "8c7964d0bcc9cbfc660e45040913d75b"
+        }
+      ],
+      "verification": "Zenodo MD5 matched local source file"
+    },
+    {
+      "dataset": "human_cerebral",
+      "record_url": "https://zenodo.org/records/5242913",
+      "status": "upstream reference only; not uploaded by TraInfBench"
+    }
+  ]
+}

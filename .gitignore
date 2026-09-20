@@ -79,3 +79,5 @@
 !/data/processed/scmultisim/atac.h5ad
 !/data/processed/scmultisim/rna_umap.png
 !/data/processed/scmultisim/atac_umap.png
+
+!/data/zenodo_records.json

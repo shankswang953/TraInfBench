@@ -22,3 +22,15 @@ Five datasets (four real datasets plus scMultiSim) are provided in [processed/](
 reduced RNA/ATAC h5ad files with UMAP coordinates. See [release preparation](RELEASE_PLAN.md)
 and [source rights](SOURCE_RIGHTS.md). Large source matrices and local preparation inventories remain excluded.
 The latest palate ATAC input is LSI15; LSI40 in the historical table describes an older representation.
+
+## Large source matrices on Zenodo
+
+| Dataset | Source files | Record |
+| --- | --- | --- |
+| scMultiSim | Source simulation tables, labels and velocity | [Zenodo](https://zenodo.org/records/22865368) |
+| Palate | RNA, ATAC, gene activity and source peaks (4 h5ad) | [Zenodo](https://zenodo.org/records/22865407) |
+| Gastrulation | Source RNA and ATAC peak matrices (2 h5ad) | [Zenodo](https://zenodo.org/records/22865419) |
+| Pancreas | Split RNA and ATAC matrices (2 h5ad); full h5mu omitted | [Zenodo](https://zenodo.org/records/22865425) |
+| Human cerebral | Upstream metacell source; not mirrored here | [Original Zenodo record](https://zenodo.org/records/5242913) |
+
+These larger source objects differ from the reduced model inputs under `processed/`.

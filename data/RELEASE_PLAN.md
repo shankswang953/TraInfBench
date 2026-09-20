@@ -69,3 +69,12 @@ source conditions; do not rename a Seurat RDS or MuData file to `.h5ad`.
 
 See [source rights review](SOURCE_RIGHTS.md). No blanket license has been assigned
 to the dataset collection; a package's software license does not automatically license its data.
+
+## Deposited source-data selection
+
+The selected large files are now organized as separate Zenodo records linked in
+[data/README.md](README.md): scMultiSim source tables; palate RNA, ATAC, gene activity
+and source peaks; gastrulation RNA and ATAC peaks before the later processed stage;
+pancreas split RNA/ATAC h5ad only. Human cerebral metacells link to the upstream
+Zenodo record rather than a duplicate deposit. Each uploaded matrix was checked
+against the local MD5; see [record manifest](zenodo_records.json).
