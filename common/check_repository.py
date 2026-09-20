@@ -48,7 +48,7 @@ def main() -> None:
             errors.append(f'Unexpected large release file: {path.relative_to(ROOT)}')
         if path.suffix in {'.h5ad', '.npz', '.npy', '.pt', '.pth', '.joblib', '.pkl', '.pdf', '.png'}:
             errors.append(f'Generated/data artifact in source tree: {path.relative_to(ROOT)}')
-    for method in ('TrajectoryNet', 'MIOFlow', 'CytoBridge', 'TIGON'):
+    for method in ('TrajectoryNet', 'MIOFlow', 'CytoBridge', 'TIGON', 'scMultiNODE'):
         if not (ROOT / 'model' / method / 'README.md').is_file():
             errors.append(f'Missing method guide: {method}')
     if errors:

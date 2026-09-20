@@ -6,5 +6,6 @@ Upstream source code, example datasets and checkpoints are not vendored. Exact s
 - CytoBridge: zhenyiizhang/CytoBridge. The local patch is covered by the upstream GPLv3 notice in `model/CytoBridge/UPSTREAM_LICENSE.txt`.
 - TIGON: yutongo/TIGON. `model/TIGON/run_tigon_moscot_ae.py` and its helpers are the benchmark's adapted/vectorized implementation; upstream MIT attribution is retained in `model/TIGON/UPSTREAM_LICENSE.txt`.
 - COATI/scMultiSim manuscript plots copied from the author's adjacent research workspace are identified in `common/source_manifest.json`. COATI core code, training and data are not distributed here.
+- scMultiNODE: rsinghlab/scMultiNODE (MIT). The separate unmodified checkout retains its `LICENSE`; `model/scMultiNODE` imports the pinned official training code and adds benchmark I/O, signed decoder outputs, native-grid trajectory export and an optional tested QGW storage adapter.
 
 No repository-wide license is asserted over third-party components. Consult each linked project and retained notice for its terms.

@@ -8,6 +8,7 @@ Follow each project's installation instructions. Clone into the following local 
 | MIOFlow | https://github.com/KrishnaswamyLab/MIOFlow | `external/MIOFlow` |
 | CytoBridge | https://github.com/zhenyiizhang/CytoBridge | `external/CytoBridge` |
 | TIGON | https://github.com/yutongo/TIGON | `external/TIGON_upstream_1ed92cf` |
+| scMultiNODE | https://github.com/rsinghlab/scMultiNODE | `external/scMultiNODE` |
 
 For the exact benchmark, check out the revision in [versions.json](versions.json), apply the method's `benchmark.patch` if provided, and follow the upstream installation instructions. The patch contains only local changes, not a copy of the package. Do not apply it twice.
 

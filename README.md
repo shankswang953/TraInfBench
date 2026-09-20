@@ -4,7 +4,7 @@ Lightweight trajectory-inference benchmark adapters and figure-analysis code for
 
 | Directory | Contents |
 | --- | --- |
-| [model/](model/README.md) | TrajectoryNet, MIOFlow, CytoBridge and TIGON: training, trajectory generation and short usage guides |
+| [model/](model/README.md) | TrajectoryNet, MIOFlow, CytoBridge, TIGON and scMultiNODE: training, trajectory generation and short usage guides |
 | [comparison/](comparison/README.md) | Paper comparisons organized by dataset, with a figure-to-code index |
 | [common/](common/README.md) | Shared plotting, evaluation and path helpers |
 | [external/](external/README.md) | Where to install upstream packages; no upstream source is included |

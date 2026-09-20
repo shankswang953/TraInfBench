@@ -1,0 +1,12 @@
+{
+  "scenario": "full", "seed": 0,
+  "input_space": "frozen_normalized_rna50_atac14",
+  "latent_dim": 10, "solver": "official_euler",
+  "ae_iters": 2000, "ae_batch_size": 128,
+  "fusion_iters": 2000, "fusion_batch_size": 128,
+  "iters": 20000, "batch_size": 1024,
+  "lr": 0.001, "align_coeff": 0.1, "dyn_reg_coeff": 0.1,
+  "n_neighbors": 10, "threads": 1,
+  "checkpoint_every": 1000, "trajectory_dt": 0.025,
+  "inference_batch_size": 512
+}

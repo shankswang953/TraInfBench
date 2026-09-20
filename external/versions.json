@@ -1,4 +1,8 @@
 {
+  "scMultiNODE": {
+    "url": "https://github.com/rsinghlab/scMultiNODE.git",
+    "commit": "c4e444d24849393bc923ffb5373e5cea35476013"
+  },
   "TrajectoryNet": {
     "url": "https://github.com/KrishnaswamyLab/TrajectoryNet.git",
     "commit": "810c89b081f95405bc0ad42bfb3cb41038e13700"

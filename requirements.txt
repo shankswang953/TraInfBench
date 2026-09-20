@@ -1,5 +1,5 @@
 # Scientific dependencies tested in the original Python 3.10 environment.
-# Install the four method packages separately; see model/*/README.md.
+# Install the method dependencies separately; see model/*/README.md.
 numpy==2.2.6
 pandas
 scipy
