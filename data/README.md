@@ -1,6 +1,6 @@
-# Data and frozen inputs (not distributed)
+# Data and frozen inputs
 
-Place prepared benchmark fixtures in this directory, retaining the names expected by the chosen launcher. Put manuscript-side assets in `external/COATI` and generated model outputs in `results`. Do not commit any of them.
+Place prepared benchmark fixtures in this directory, retaining the names expected by the chosen launcher. Put manuscript-side assets in `external/COATI` and generated model outputs in `results`. Large local inputs remain excluded; the explicitly curated small release is under `processed/`.
 
 | Dataset | Public source | Benchmark representation |
 | --- | --- | --- |
@@ -14,4 +14,11 @@ Gastrulation data were originally extracted with `MouseGastrulationData::RAMulti
 
 TrajectoryNet expects `pca` plus `sample_labels` in `.npz`. CytoBridge/MIOFlow/TIGON adapters expect `.h5ad` with `obsm['X_latent']`, often `obsm['X_pca']`, and an explicit time column (`time_point_processed`, `stage_num`, etc.). Keep physical times and internal ranks separate. Frozen normalization parameters, map checkpoints, reference metadata, cell indices and learned preprocessing are required for exact paper reproduction; re-downloading raw data does not reconstruct these automatically.
 
-No data, including small example cells, are uploaded in this release. Per-dataset [comparison instructions](../comparison/README.md) describe which cached assets a plot needs.
+The five reduced datasets and observed UMAPs are included in [processed/](processed/README.md). Per-dataset [comparison instructions](../comparison/README.md) describe which cached assets a plot needs.
+
+## Reduced data release
+
+Five datasets (four real datasets plus scMultiSim) are provided in [processed/](processed/README.md) as
+reduced RNA/ATAC h5ad files with UMAP coordinates. See [release preparation](RELEASE_PLAN.md)
+and [source rights](SOURCE_RIGHTS.md). Large source matrices and local preparation inventories remain excluded.
+The latest palate ATAC input is LSI15; LSI40 in the historical table describes an older representation.

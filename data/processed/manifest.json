@@ -1,0 +1,168 @@
+{
+  "status": "Reduced benchmark input release; upstream source conditions retained; see ../SOURCE_RIGHTS.md",
+  "files": [
+    {
+      "dataset": "gastrulation",
+      "modality": "rna",
+      "file": "gastrulation/rna.h5ad",
+      "n_obs": 35503,
+      "n_components": 50,
+      "bytes": 22155044,
+      "sha256": "e88124e28b33ce9a21890275af8bde5de96ad9fa1d85bcf16d8109badbe7b27d",
+      "umap": {
+        "kind": "source_h5ad_embedding",
+        "file": "gastrulation_rna_processed.h5ad",
+        "key": "X_umap",
+        "row_alignment": "stage order + numerical representation equality",
+        "note": "Source visualization; may have been fit on a different dimensional representation."
+      }
+    },
+    {
+      "dataset": "gastrulation",
+      "modality": "atac",
+      "file": "gastrulation/atac.h5ad",
+      "n_obs": 35503,
+      "n_components": 14,
+      "bytes": 7763128,
+      "sha256": "9a53bad7987710a161596cf37e31ecd828845ef130a20dd3baae4aa24a863631",
+      "umap": {
+        "kind": "frozen_benchmark_reducer",
+        "file": "atac_umap_model_14D.joblib",
+        "sha256": "4f36151caba0cfb938a3639ceb5f15d8fc8c53323dea5705768e1e6a9cf2a6a5",
+        "input_space": "raw",
+        "max_abs_input_error": 0.0
+      }
+    },
+    {
+      "dataset": "pancreas",
+      "modality": "rna",
+      "file": "pancreas/rna.h5ad",
+      "n_obs": 22604,
+      "n_components": 50,
+      "bytes": 14140500,
+      "sha256": "fd7d5d6c38ed8691e4cb727d5b0b4b9b60cfeb96f75a865f1e909dd866befbe1",
+      "umap": {
+        "kind": "source_h5ad_embedding",
+        "file": "rna_adata.h5ad",
+        "key": "X_umap",
+        "row_alignment": "stage order + numerical representation equality",
+        "note": "Source visualization; may have been fit on a different dimensional representation."
+      }
+    },
+    {
+      "dataset": "pancreas",
+      "modality": "atac",
+      "file": "pancreas/atac.h5ad",
+      "n_obs": 22604,
+      "n_components": 22,
+      "bytes": 7056677,
+      "sha256": "cfbdd898298c3052796c4ea5dda4a49a8ec2b8dbab96c7e348bd53ab09a6b463",
+      "umap": {
+        "kind": "source_h5ad_embedding",
+        "file": "atac_adata.h5ad",
+        "key": "X_umap",
+        "row_alignment": "stage order + numerical representation equality",
+        "note": "Source visualization; may have been fit on a different dimensional representation."
+      }
+    },
+    {
+      "dataset": "palate",
+      "modality": "rna",
+      "file": "palate/rna.h5ad",
+      "n_obs": 19833,
+      "n_components": 40,
+      "bytes": 10420274,
+      "sha256": "c6bde8e2d4b04084459792fafc975860b2015deef0c5acc533645bd7635a9c09",
+      "umap": {
+        "kind": "frozen_benchmark_reducer",
+        "file": "rna_umap_model.joblib",
+        "sha256": "42bce895403bf81e851418f0285b4fd3b70a4840c0b08ffaa91745b3dbf8c4db",
+        "input_space": "normalized",
+        "max_abs_input_error": 0.0
+      }
+    },
+    {
+      "dataset": "palate",
+      "modality": "atac",
+      "file": "palate/atac.h5ad",
+      "n_obs": 19833,
+      "n_components": 15,
+      "bytes": 4474028,
+      "sha256": "59c906216c33ef5b649cfd272d76418d39e34cdd6f1b7aeaf0b6da0ebddc1b69",
+      "umap": {
+        "kind": "frozen_benchmark_reducer",
+        "file": "atac_umap_model.joblib",
+        "sha256": "29ffbaadf97d0b9bf959c31c4ec7ddfe3c483c81da55efdbded8e8a92c1bb780",
+        "input_space": "normalized",
+        "max_abs_input_error": 0.0
+      }
+    },
+    {
+      "dataset": "human_cerebral",
+      "modality": "rna",
+      "file": "human_cerebral/rna.h5ad",
+      "n_obs": 20663,
+      "n_components": 30,
+      "bytes": 8542719,
+      "sha256": "0f7838979deb616e7ef2ce3c7639a404974ff7c0d30f4664efde080a9d8bfa9a",
+      "umap": {
+        "kind": "frozen_benchmark_coordinates",
+        "file": "umap_coordinates.csv.gz",
+        "sha256": "e68535783f10daaec9fc5753986f385f6aceb03d89afd15428d27461424de32f",
+        "representation": "Model RNA",
+        "row_alignment": "exact paired metacell IDs"
+      }
+    },
+    {
+      "dataset": "human_cerebral",
+      "modality": "atac",
+      "file": "human_cerebral/atac.h5ad",
+      "n_obs": 20663,
+      "n_components": 12,
+      "bytes": 4270426,
+      "sha256": "316f792c754e74bd90b67b1556b4cdf49551f0c62eebd49756ec52b566779e21",
+      "umap": {
+        "kind": "frozen_benchmark_coordinates",
+        "file": "umap_coordinates.csv.gz",
+        "sha256": "e68535783f10daaec9fc5753986f385f6aceb03d89afd15428d27461424de32f",
+        "representation": "Model ATAC",
+        "row_alignment": "exact paired metacell IDs"
+      }
+    },
+    {
+      "dataset": "scmultisim",
+      "modality": "rna",
+      "file": "scmultisim/rna.h5ad",
+      "n_obs": 10000,
+      "n_components": 10,
+      "bytes": 1639040,
+      "sha256": "86d047e737d7baa575858416f5a9a20f4951f5fddf6266225a425533c898a41f",
+      "umap": {
+        "kind": "frozen_benchmark_coordinate_cache",
+        "file": "observed_rna10_umap.npz",
+        "sha256": "d5ef08406f95b6405319b7469b8130d464383aa144a506a772b06f38ba99a779",
+        "row_alignment": "Original producer concatenates time1..time4; population sequence and dimension checked. Cache has no cell IDs or input matrix; independent per-row identity cannot be verified.",
+        "producer": "scripts/fit_project_synthetic_rna10_umap.py",
+        "input_space": "raw RNA PCA10"
+      }
+    },
+    {
+      "dataset": "scmultisim",
+      "modality": "atac",
+      "file": "scmultisim/atac.h5ad",
+      "n_obs": 10000,
+      "n_components": 8,
+      "bytes": 1395449,
+      "sha256": "bfad48830a40481b2f31f99500b79f13f55ccb1b4cd36ab947e9ee042a6a7a6c",
+      "umap": {
+        "kind": "new_release_visualization",
+        "note": "New visualization of the exact normalized ATAC8 inputs; NOT a manuscript frozen UMAP.",
+        "n_neighbors": 30,
+        "min_dist": 0.25,
+        "random_state": 42,
+        "metric": "euclidean",
+        "umap_version": "0.5.11"
+      }
+    }
+  ]
+}
