@@ -72,9 +72,11 @@ to the dataset collection; a package's software license does not automatically l
 
 ## Deposited source-data selection
 
-The selected large files are now organized as separate Zenodo records linked in
-[data/README.md](README.md): scMultiSim source tables; palate RNA, ATAC, gene activity
-and source peaks; gastrulation RNA and ATAC peaks before the later processed stage;
-pancreas split RNA/ATAC h5ad only. Human cerebral metacells link to the upstream
-Zenodo record rather than a duplicate deposit. Each uploaded matrix was checked
-against the local MD5; see [record manifest](zenodo_records.json).
+The selected large files are collected in one **COATI datasets** Zenodo record
+linked in [data/README.md](README.md): palate RNA, ATAC, gene activity and source
+peaks; gastrulation RNA and ATAC peaks before the later processed stage; pancreas
+split RNA/ATAC h5ad only. Three dataset ZIPs total 18.62 GB. scMultiSim is excluded
+from this deposit. Human cerebral metacells link to the original authors' record.
+Each archived matrix was checked against its original MD5 after decompression;
+each uploaded ZIP was checked against the server MD5. See the
+[record manifest](zenodo_records.json).

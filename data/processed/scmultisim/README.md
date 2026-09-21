@@ -36,4 +36,4 @@ ATAC UMAP 是这次新生成的展示坐标，不代表论文冻结 UMAP。RNA �
 
 LOO 掩码对应 scMultiNODE 已定义协议；其他模型的时间编码、原始/归一化选择和采样仍按各自 README。数值和 ID 已读回核对，哈希见上级 manifest.json。来源与发布计划见 ../../SOURCE_RIGHTS.md 和 ../../RELEASE_PLAN.md。
 
-较大的源数据：[Zenodo](https://zenodo.org/records/22865368)。Human cerebral 使用上游记录；其余为本项目按数据集整理的记录。
+scMultiSim 暂不收录在当前 COATI datasets Zenodo 记录中；这里保留小型降维输入及 UMAP。

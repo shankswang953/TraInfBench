@@ -23,14 +23,26 @@ reduced RNA/ATAC h5ad files with UMAP coordinates. See [release preparation](REL
 and [source rights](SOURCE_RIGHTS.md). Large source matrices and local preparation inventories remain excluded.
 The latest palate ATAC input is LSI15; LSI40 in the historical table describes an older representation.
 
-## Large source matrices on Zenodo
+## COATI datasets on Zenodo
 
-| Dataset | Source files | Record |
+The original/source data used in the COATI manuscript are collected in one
+[COATI datasets record](https://zenodo.org/records/22865714) (18.62 GB compressed).
+
+| Dataset | Archive / source | Contents |
 | --- | --- | --- |
-| scMultiSim | Source simulation tables, labels and velocity | [Zenodo](https://zenodo.org/records/22865368) |
-| Palate | RNA, ATAC, gene activity and source peaks (4 h5ad) | [Zenodo](https://zenodo.org/records/22865407) |
-| Gastrulation | Source RNA and ATAC peak matrices (2 h5ad) | [Zenodo](https://zenodo.org/records/22865419) |
-| Pancreas | Split RNA and ATAC matrices (2 h5ad); full h5mu omitted | [Zenodo](https://zenodo.org/records/22865425) |
-| Human cerebral | Upstream metacell source; not mirrored here | [Original Zenodo record](https://zenodo.org/records/5242913) |
+| Gastrulation | `gastrulation.zip` | Source RNA and ATAC peak matrices before the later processed stage (2 h5ad) |
+| Pancreas | `pancreas.zip` | Split RNA and ATAC matrices (2 h5ad); full h5mu omitted |
+| Palate | `palate.zip` | RNA, ATAC, gene activity and source peaks (4 h5ad) |
+| Human cerebral | [Original authors' record](https://zenodo.org/records/5242913) | Metacell source; link only, not mirrored |
 
-These larger source objects differ from the reduced model inputs under `processed/`.
+Each ZIP extracts to a dataset folder containing the H5AD files, README and
+`FILES.json` with original file checksums. Archive checksums are in the record's
+`checksums.json` and [local manifest](zenodo_records.json).
+scMultiSim is not included in this Zenodo deposit; its small reduced benchmark
+inputs remain available under `processed/`.
+
+“Original/source” refers to the analysis source matrices and annotated objects
+used in COATI, which may already include preprocessing; these are not raw
+sequencing reads. Credit the cited original studies and follow their source
+conditions. These larger objects differ from the reduced model inputs under
+`processed/`.

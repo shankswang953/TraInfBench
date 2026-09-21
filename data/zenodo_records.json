@@ -1,20 +1,28 @@
 {
-  "records": [
+  "title": "COATI datasets: original/source data used in the manuscript",
+  "record_url": "https://zenodo.org/records/22865714",
+  "doi": "10.5281/zenodo.22865714",
+  "archives": [
     {
-      "dataset": "scmultisim",
-      "record_url": "https://zenodo.org/records/22865368",
-      "files": [
-        {
-          "name": "scmultisim_source_tables.zip",
-          "bytes": 47111251,
-          "md5": "2372ee4e50c9999ccd80b508e27e95f6"
-        }
-      ],
-      "verification": "Zenodo MD5 matched local source file"
+      "file": "gastrulation.zip",
+      "bytes": 2582663358,
+      "md5": "976c761c670952813249d55dc6c95731"
     },
     {
+      "file": "pancreas.zip",
+      "bytes": 15065199425,
+      "md5": "3808d0f2a5c6bd009f0f6992783a32e8"
+    },
+    {
+      "file": "palate.zip",
+      "bytes": 975121469,
+      "md5": "27b5fa1862591fe3a6f40e0e3750b9b7"
+    }
+  ],
+  "records": [
+    {
       "dataset": "palate",
-      "record_url": "https://zenodo.org/records/22865407",
+      "record_url": "https://zenodo.org/records/22865714",
       "files": [
         {
           "name": "rna_dimReduced.h5ad",
@@ -37,11 +45,12 @@
           "md5": "3a8149eca8686754b791dfc3c8a49115"
         }
       ],
-      "verification": "Zenodo MD5 matched local source file"
+      "verification": "Decompressed archive entries match original file MD5; uploaded archive matches Zenodo MD5",
+      "archive": "palate.zip"
     },
     {
       "dataset": "gastrulation",
-      "record_url": "https://zenodo.org/records/22865419",
+      "record_url": "https://zenodo.org/records/22865714",
       "files": [
         {
           "name": "gastrulation_rna.h5ad",
@@ -54,11 +63,12 @@
           "md5": "ae874548c4c7f7ecd3341bcb3e1a98ba"
         }
       ],
-      "verification": "Zenodo MD5 matched local source file"
+      "verification": "Decompressed archive entries match original file MD5; uploaded archive matches Zenodo MD5",
+      "archive": "gastrulation.zip"
     },
     {
       "dataset": "pancreas",
-      "record_url": "https://zenodo.org/records/22865425",
+      "record_url": "https://zenodo.org/records/22865714",
       "files": [
         {
           "name": "rna_adata.h5ad",
@@ -71,12 +81,16 @@
           "md5": "8c7964d0bcc9cbfc660e45040913d75b"
         }
       ],
-      "verification": "Zenodo MD5 matched local source file"
+      "verification": "Decompressed archive entries match original file MD5; uploaded archive matches Zenodo MD5",
+      "archive": "pancreas.zip"
     },
     {
       "dataset": "human_cerebral",
       "record_url": "https://zenodo.org/records/5242913",
       "status": "upstream reference only; not uploaded by TraInfBench"
     }
+  ],
+  "excluded_from_deposit": [
+    "scmultisim"
   ]
 }
