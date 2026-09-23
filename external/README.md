@@ -1,4 +1,4 @@
-# External software (not included)
+# Existing Packages (not included)
 
 Follow each project's installation instructions. Clone into the following local paths if using source installations; Git ignores all checkout contents.
 
